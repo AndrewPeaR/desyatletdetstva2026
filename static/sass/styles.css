@@ -1,0 +1,167 @@
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+/* Links */
+a, a:link, a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+/* Common */
+aside, nav, footer, header, section, main {
+  display: block; }
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit; }
+
+ul, ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+img, svg {
+  max-width: 100%;
+  height: auto; }
+
+address {
+  font-style: normal; }
+
+/* Form */
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent; }
+
+input::-ms-clear {
+  display: none; }
+
+button, input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer; }
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+label {
+  cursor: pointer; }
+
+legend {
+  display: block; }
+
+@font-face {
+  font-family: 'DaysSansBlack';
+  src: url("fonts/dayssansblack.eot");
+  src: url("fonts/dayssansblack.eot?#iefix") format("embedded-opentype"), url("fonts/dayssansblack.woff2") format("woff2"), url("fonts/dayssansblack.woff") format("woff"), url("fonts/dayssansblack.ttf") format("truetype"), url("fonts/dayssansblack.svg#dayssansblack") format("svg");
+    src-font-weight: normal;
+    src-font-style: normal; }
+
+.wrapper {
+  max-width: 1206px;
+  margin: 0 auto; }
+
+* {
+  font-family: "DaysSansBlack", sans-serif; }
+
+html, body {
+  background-color: #ffffff; }
+
+html {
+  scroll-behavior: smooth; }
+
+.hero {
+  padding-top: 100px;
+  padding-bottom: 270px;
+  overflow: hidden; }
+  .hero .wrapper {
+    position: relative; }
+  .hero__backgrounds {
+    position: absolute;
+    top: -80px;
+    right: -200px; }
+  .hero__header {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 45px; }
+  .hero__info {
+    margin-bottom: 55px; }
+  .hero__subtitle {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 400;
+    color: #DA3815; }
+  .hero__title {
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 400;
+    color: #DA3815; }
+    .hero__title span {
+      font-size: 48px;
+      font-weight: 400;
+      color: #478031; }
+  .hero__controls {
+    display: flex;
+    align-items: center;
+    gap: 70px; }
+  .hero__date {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 400;
+    color: #EC6F16; }
+  .hero__city {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 400;
+    color: #3C5C26; }
+  .hero__programm {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CFD09E;
+    padding: 35px;
+    border-radius: 13px;
+    color: #3C5C26;
+    transition: all 0.2s ease-out; }
+    .hero__programm:hover {
+      filter: brightness(115%); }
+
+.video {
+  padding: 145px 0;
+  background-color: #EC6F16;
+  background-image: url("../img/video_background.svg");
+  background-position: center calc( 100% - 25px);
+  background-repeat: repeat-x; }
+  .video .wrapper {
+    position: relative; }
+  .video__background_1 {
+    position: absolute;
+    bottom: 5%;
+    left: -140px; }
+  .video__background_2 {
+    position: absolute;
+    bottom: 5%;
+    right: -140px; }
+
+/*# sourceMappingURL=styles.css.map */

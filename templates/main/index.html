@@ -1,0 +1,89 @@
+<!doctype html>
+{% load static %} {% load sass_tags %}
+
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="{% sass_src 'sass/styles.sass' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Десятилетие детства 2026</title>
+    <link rel="icon" type="image/x-icon" href=" {% static 'favicon.ico' %}" />
+
+    <!-- <meta name="description" content="XVII Всероссийский форум «Вместе – ради детей! В фокусе – семья!» Форум — ежегодное масштабное мероприятие, проводимое Фондом поддержки детей, находящихся в трудной жизненной ситуации, в партнерстве с органами исполнительной власти субъектов Российской Федерации.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ясемьяюграроссия.рф/">
+    <meta property="og:title" content="XVII Всероссийский форум «Вместе - ради детей! В фокусе - семья!» 23 - 24 сентября">
+    <meta property="og:description" content="XVII Всероссийский форум «Вместе – ради детей! В фокусе – семья!» Форум — ежегодное масштабное мероприятие, проводимое Фондом поддержки детей, находящихся в трудной жизненной ситуации, в партнерстве с органами исполнительной власти субъектов Российской Федерации.">
+    <meta property="og:image" content="https://ясемьяюграроссия.рф/staticfiles/video/poster.jpg">     -->
+
+    <script
+      src="https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=onloadFunction"
+      defer
+    ></script>
+  </head>
+  <body>
+    <main class="hero">
+      <div class="wrapper">
+        <div class="hero__header">
+          <img
+            src="{% static 'img/logos/10years_child.png' %}"
+            alt="10years_child"
+          />
+          <img src="{% static 'img/logos/family2026.svg' %}" alt="family2026" />
+          <img src="{% static 'img/logos/hmao.svg' %}" alt="hmao" />
+          <img
+            src="{% static 'img/logos/yougn_family.svg' %}"
+            alt="yougn_family"
+          />
+          <img
+            src="{% static 'img/logos/nacprojects.svg' %}"
+            alt="nacprojects"
+          />
+        </div>
+        <div class="hero__info">
+          <p class="hero__subtitle">Межрегиональный форум</p>
+          <h1 class="hero__title">
+            «Десятилетие детства.<br /><span
+              >Счастливая семья –<br />счастливые дети»</span
+            >
+          </h1>
+        </div>
+        <div class="hero__controls">
+          <div class="hero__text">
+            <p class="hero__date">23 октября</p>
+            <p class="hero__city">г. Ханты-Мансийск</p>
+          </div>
+          <a class="hero__programm" href="#">Программа</a>
+        </div>
+        <div class="hero__backgrounds">
+        <img
+          src="{% static 'img/hero_backgrounds.svg' %}"
+          alt="hero_backgrounds"
+        />
+      </div>
+      </div>
+      
+    </main>
+
+    <div class="video">
+        <div class="wrapper">
+            <div style="width: 1200px; height: 600px; background-color: gray"></div>
+            <img class="video__background_1" src="{% static 'img/icons/video_back1.svg' %}" alt="video_back1">
+            <img class="video__background_2" src="{% static 'img/icons/video_back2.svg' %}" alt="video_back2">
+        </div>
+    </div>
+
+    <section class="register">
+        <div class="wrapper">
+            <h2 class="register__title">Регистрация</h2>
+            
+        </div>
+    </section>
+
+    <script src="{% static 'js/captcha.js' %}"></script>
+  </body>
+</html>
