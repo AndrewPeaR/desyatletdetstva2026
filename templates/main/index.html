@@ -11,7 +11,11 @@
       type="text/css"
     />
     <title>Десятилетие детства 2026</title>
-    <link rel="icon" type="image/x-icon" href=" {% static 'favicon.ico' %}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href=" {% static 'img/favicon.ico' %}"
+    />
 
     <!-- <meta name="description" content="XVII Всероссийский форум «Вместе – ради детей! В фокусе – семья!» Форум — ежегодное масштабное мероприятие, проводимое Фондом поддержки детей, находящихся в трудной жизненной ситуации, в партнерстве с органами исполнительной власти субъектов Российской Федерации.">
     <meta property="og:type" content="website">
@@ -57,33 +61,908 @@
             <p class="hero__date">23 октября</p>
             <p class="hero__city">г. Ханты-Мансийск</p>
           </div>
-          <a class="hero__programm" href="#">Программа</a>
+          <!-- <a class="hero__programm" href="#">Программа</a> -->
         </div>
         <div class="hero__backgrounds">
-        <img
-          src="{% static 'img/hero_backgrounds.svg' %}"
-          alt="hero_backgrounds"
-        />
+          <img
+            src="{% static 'img/hero_backgrounds.svg' %}"
+            alt="hero_backgrounds"
+          />
+        </div>
       </div>
-      </div>
-      
     </main>
 
     <div class="video">
-        <div class="wrapper">
-            <div style="width: 1200px; height: 600px; background-color: gray"></div>
-            <img class="video__background_1" src="{% static 'img/icons/video_back1.svg' %}" alt="video_back1">
-            <img class="video__background_2" src="{% static 'img/icons/video_back2.svg' %}" alt="video_back2">
-        </div>
+      <div class="wrapper">
+        <a class="video__block" data-fslightbox="video" data-autoplay href="{% static 'video/mainvideo.webm' %}">
+          <img class="video__play" src="{% static 'img/icons/play.svg' %}" alt="play">
+        </a>
+        <img
+          class="video__background_1"
+          src="{% static 'img/icons/video_back1.svg' %}"
+          alt="video_back1"
+        />
+        <img
+          class="video__background_2"
+          src="{% static 'img/icons/video_back2.svg' %}"
+          alt="video_back2"
+        />
+      </div>
     </div>
 
     <section class="register">
-        <div class="wrapper">
-            <h2 class="register__title">Регистрация</h2>
-            
-        </div>
+      <div class="wrapper">
+        <h2 class="register__title">Регистрация</h2>
+        <form
+          class="register__form"
+          id="registerForm"
+          action="/"
+          method="POST"
+          onsubmit="handleSubmit1(event)"
+        >
+          {% csrf_token %}
+          <input type="hidden" name="register_submit" value="1" />
+          <div class="register__input-wrapper">
+            <label class="register__label" for="fio">ФИО</label>
+            {{ registerForm.fio }}
+            <!-- <input
+              class="register__input register__input_height"
+              id="fio"
+              type="text"
+            /> -->
+          </div>
+          <div class="format-select" data-open="false">
+            <button
+              type="button"
+              class="format-select__trigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              id="formatTriggerCategory"
+            >
+              <span class="format-select__label">Категория</span>
+              <span data-label></span>
+              <svg
+                class="format-select__arrow"
+                width="20"
+                height="12"
+                viewBox="0 0 20 12"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 2L10 10L18 2"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              class="format-select__options"
+              role="listbox"
+              tabindex="-1"
+              aria-labelledby="formatTrigger"
+              id="formatOptionsCategory"
+            >
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-youngfamily"
+                data-value="youngfamily"
+                aria-selected="false"
+              >
+                Молодая семья
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-manyfamily"
+                data-value="manyfamily"
+                aria-selected="false"
+              >
+                Многодетная семья
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-studyfamily"
+                data-value="studyfamily"
+                aria-selected="false"
+              >
+                Студенческая семья
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-invalidfamily"
+                data-value="invalidfamily"
+                aria-selected="false"
+              >
+                Семья, воспитывающая ребенка инвалида, ребенка с ограниченными
+                возможностями здоровья
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-zameshaushie"
+                data-value="zameshaushie"
+                aria-selected="false"
+              >
+                Замещающая семья (опекуны, попечители, приемные родители и
+                усыновители)
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-kandidatzamesh"
+                data-value="kandidatzamesh"
+                aria-selected="false"
+              >
+                Кандидаты в замещающие семьи (слушатели школы приемных
+                родителей)
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-regorganspred"
+                data-value="regorganspred"
+                aria-selected="false"
+              >
+                Представитель региональных и муниципальных органов
+                государственной власти
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-peoplepred"
+                data-value="peoplepred"
+                aria-selected="false"
+              >
+                Представитель общественной организации
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-healthpred"
+                data-value="healthpred"
+                aria-selected="false"
+              >
+                Представитель организации здравоохранения
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-studypred"
+                data-value="studypred"
+                aria-selected="false"
+              >
+                Представитель образовательной организации
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-socialpred"
+                data-value="socialpred"
+                aria-selected="false"
+              >
+                Представитель организации социального обслуживания
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-culturepred"
+                data-value="culturepred"
+                aria-selected="false"
+              >
+                Представитель организации культуры
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-sportpred"
+                data-value="sportpred"
+                aria-selected="false"
+              >
+                Представитель организации физической культуры и спорта
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-study"
+                data-value="study"
+                aria-selected="false"
+              >
+                Студент
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-volonteer"
+                data-value="volonteer"
+                aria-selected="false"
+              >
+                Волонтер
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-another"
+                data-value="another"
+                aria-selected="false"
+              >
+                Другое
+              </li>
+            </ul>
+            {{registerForm.category}}
+          </div>
+          <div class="format-select" data-open="false">
+            <button
+              type="button"
+              class="format-select__trigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              id="formatTriggerCity"
+            >
+              <span class="format-select__label">Муниципальное образование</span>
+              <span data-label></span>
+              <svg
+                class="format-select__arrow"
+                width="20"
+                height="12"
+                viewBox="0 0 20 12"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 2L10 10L18 2"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              class="format-select__options"
+              role="listbox"
+              tabindex="-1"
+              aria-labelledby="formatTrigger"
+              id="formatOptionsCity"
+            >
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-belraion"
+                data-value="belraion"
+                aria-selected="false"
+              >
+                Белоярский район
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-berezraion"
+                data-value="berezraion"
+                aria-selected="false"
+              >
+              Берёзовский район
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-kondraion"
+                data-value="kondraion"
+                aria-selected="false"
+              >
+                Кондинский район
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-neftraion"
+                data-value="neftraion"
+                aria-selected="false"
+              >
+                Нефтеюганский район
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-nijneraion"
+                data-value="nijneraion"
+                aria-selected="false"
+              >
+                Нижневартовский район
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-oktybrraion"
+                data-value="oktybrraion"
+                aria-selected="false"
+              >
+                Октябрьский район
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-sovetraion"
+                data-value="sovetraion"
+                aria-selected="false"
+              >
+                Советский район
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-surgutraion"
+                data-value="surgutraion"
+                aria-selected="false"
+              >
+                Сургутский район
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-khantyraion"
+                data-value="khantyraion"
+                aria-selected="false"
+              >
+                Ханты-Мансийский район
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-kogalym"
+                data-value="kogalym"
+                aria-selected="false"
+              >
+                Когалым
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-langepas"
+                data-value="langepas"
+                aria-selected="false"
+              >
+                Лангепас
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-megion"
+                data-value="megion"
+                aria-selected="false"
+              >
+                Мегион
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-neftegansk"
+                data-value="neftegansk"
+                aria-selected="false"
+              >
+                Нефтеюганск
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-nijnevartovsk"
+                data-value="nijnevartovsk"
+                aria-selected="false"
+              >
+                Нижневартовск
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-nyagan"
+                data-value="nyagan"
+                aria-selected="false"
+              >
+                Нягань
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-pokachi"
+                data-value="pokachi"
+                aria-selected="false"
+              >
+                Покачи
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-pytyach"
+                data-value="pytyach"
+                aria-selected="false"
+              >
+                Пыть-Ях
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-radujnyi"
+                data-value="radujnyi"
+                aria-selected="false"
+              >
+                Радужный
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-surgut"
+                data-value="surgut"
+                aria-selected="false"
+              >
+                Сургут
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-yrai"
+                data-value="yrai"
+                aria-selected="false"
+              >
+                Урай
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-khanty"
+                data-value="khanty"
+                aria-selected="false"
+              >
+                Ханты-Мансийск
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-ugorsk"
+                data-value="ugorsk"
+                aria-selected="false"
+              >
+                Югорск
+              </li>
+            </ul>
+            {{registerForm.city}}
+          </div>
+          
+          <div class="format-select" data-open="false">
+            <button
+              type="button"
+              class="format-select__trigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              id="formatTriggerPlace"
+            >
+              <span class="format-select__label">Площадка, которую хотите посетить</span>
+              <span data-label></span>
+              <svg
+                class="format-select__arrow"
+                width="20"
+                height="12"
+                viewBox="0 0 20 12"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 2L10 10L18 2"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              class="format-select__options"
+              role="listbox"
+              tabindex="-1"
+              aria-labelledby="formatTrigger"
+              id="formatOptionsPlace"
+            >
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-prozvet"
+                data-value="prozvet"
+                aria-selected="false"
+              >
+                Проектная мастерская «Процветание» 
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-history"
+                data-value="history"
+                aria-selected="false"
+              >
+              Проектная мастерская «История» 
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-inklusion"
+                data-value="inklusion"
+                aria-selected="false"
+              >
+                Проектная мастерская «Инклюзия»
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-family"
+                data-value="family"
+                aria-selected="false"
+              >
+                Проектная мастерская  «Семья»
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-mir"
+                data-value="mir"
+                aria-selected="false"
+              >
+                Проектная мастерская «Мир»
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-laboratory"
+                data-value="laboratory"
+                aria-selected="false"
+              >
+                Проектная мастерская «Лаборатория»
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-iniciativa"
+                data-value="iniciativa"
+                aria-selected="false"
+              >
+                Проектная мастерская «Инициатива»
+              </li>
+            </ul>
+            {{registerForm.place}}
+          </div>
+          
+          <div class="register__input-wrapper">
+            <label class="register__label" for="place"
+              >Номер телефона</label
+            >
+            {{ registerForm.phone }}
+          </div>
+          <div class="register__input-wrapper">
+            <label class="register__label" for="city"
+              >Email</label
+            >
+            {{ registerForm.email }}
+          </div>
+          <div class="format-select" data-open="false">
+            <button
+              type="button"
+              class="format-select__trigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              id="formatTrigger"
+            >
+              <span class="format-select__label">Формат участия</span>
+              <span data-label></span>
+              <svg
+                class="format-select__arrow"
+                width="20"
+                height="12"
+                viewBox="0 0 20 12"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 2L10 10L18 2"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <ul
+              class="format-select__options"
+              role="listbox"
+              tabindex="-1"
+              aria-labelledby="formatTrigger"
+              id="formatOptions"
+            >
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-ochno"
+                data-value="off"
+                aria-selected="false"
+              >
+                Очно
+              </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-zaochno"
+                data-value="onn"
+                aria-selected="false"
+              >
+                Заочно
+              </li>
+            </ul>
+
+            <!-- реальный select — именно он попадёт в данные формы -->
+            {{registerForm.format}}
+            <!-- <select
+              name="format"
+              class="format-select__native"
+              aria-hidden="true"
+              tabindex="-1"
+            >
+              <option value="" selected disabled hidden>Выберите формат</option>
+              <option value="off">Очно</option>
+              <option value="onn">Заочно</option>
+            </select> -->
+          </div>
+          <div class="register__input-wrapper">
+            <label class="register__label" for="message"
+              >Доп. информация для организаторов</label
+            >
+            <!-- <textarea
+              class="register__input"
+              id="message"
+              type="text"
+              rows="5"
+            ></textarea> -->
+            {{ registerForm.message }}
+          </div>
+          <label class="register__checkbox-wrapper">
+            <!-- <input class="register__checkbox-input" id="register__input-policy" type="checkbox"> -->
+            {{registerForm.policy}}
+            <div class="register__checkbox-box"></div>
+            <label for="register__input-policy" class="register__checkbox">
+              <p>
+                Отправляя форму я подтверждаю, что я ознакомился с
+                <a class="register__policy" href="#"
+                  >политикой конфиденциальности</a
+                >
+                и даю согласие на
+                <a class="regsiter__policy" href="#"
+                  >обработку персональных данных</a
+                >
+              </p>
+            </label>
+          </label>
+          <div id="captcha-container1"></div>
+          <button class="register__submit" type="submit">Отправить</button>
+          {{registerForm.errors}}
+        </form>
+      </div>
     </section>
 
+    <!-- <section class="sessions">
+      <div class="wrapper">
+        <div class="session__item">
+          <h2 class="session__title">Сессия</h2>
+          <div></div>
+        </div>
+        <div class="session__item">
+          <h2 class="session__title">Сессия</h2>
+          <div></div>
+        </div>
+        <div class="session__item">
+          <h2 class="session__title">Сессия</h2>
+          <div></div>
+        </div>
+      </div>
+    </section> -->
+
+    <footer class="footer">
+      <div class="footer__background">
+        <div class="wrapper footer__wrapper">
+          <div class="footer__expirience">
+            <h2 class="footer__title">По вопросам обмена опытом</h2>
+            <p class="footer__text">Фатыхова Карина Кадировна</p>
+            <a class="footer__text footer__text_hover" href="tel:83467550558"
+              >8(3462)550-558 (доб. 138)</a
+            >
+            <a
+              class="footer__text footer__text_hover"
+              href="mailto:GolubenecEM@admhmao.ru"
+              >GolubenecEM@admhmao.ru</a
+            >
+            <a
+              class="footer__text footer__text_hover"
+              href="https://rcsur86.gosuslugi.ru/"
+              target="_blank"
+              >Официальный сайт "Ресурсный центр развития социального
+              обслуживания"</a
+            >
+            <div class="footer__socials">
+              <a href="https://vk.ru/resursnyy_centr_razvitiya" target="_blank"
+                ><img src="{% static 'img/socials/vk.svg' %}" alt="vk"
+              /></a>
+              <a
+                href="https://vk.ru/away.php?to=https%3A%2F%2Fmax.ru%2Fid8602200548_gos&utf=1"
+                target="_blank"
+                ><img src="{% static 'img/socials/max.svg' %}" alt="max"
+              /></a>
+            </div>
+          </div>
+          <div class="footer__feedback">
+            <form
+              id="feedbackForm"
+              class="footer__form"
+              action="/"
+              method="POST"
+              onsubmit="handleSubmit2(event)"
+            >
+              {% csrf_token %}
+              <input type="hidden" name="feedback_submit" value="1" />
+              <!-- <input class="footer__input" type="text" placeholder="Ваше имя" /> -->
+              <div class="footer__input-wrapper">
+                <label class="footer__label" for="name">Имя</label>
+                {{feedbackForm.name}}
+                <!-- <input
+                    class="register__input register__input_height"
+                    id="fio"
+                    type="text"
+                  /> -->
+              </div>
+              <div class="footer__input-wrapper">
+                <label class="footer__label" for="email">Email</label>
+                {{feedbackForm.email}}
+                <!-- <input
+                    class="register__input register__input_height"
+                    id="fio"
+                    type="text"
+                  /> -->
+              </div>
+
+              <!-- <input class="footer__input" type="text" placeholder="Ваша почта" /> -->
+
+              <label class="footer__checkbox-wrapper">
+                <!-- <input class="register__checkbox-input" id="register__input-policy" type="checkbox"> -->
+                {{feedbackForm.policy}}
+                <div class="footer__checkbox-box"></div>
+                <label for="footer__input-policy" class="footer__checkbox">
+                  <p>
+                    Отправляя форму я подтверждаю, что я ознакомился с
+                    <a class="footer__policy" href="#"
+                      >политикой конфиденциальности</a
+                    >
+                    и даю согласие на
+                    <a class="footer__policy" href="#"
+                      >обработку персональных данных</a
+                    >
+                  </p>
+                </label>
+              </label>
+              <div id="captcha-container2"></div>
+              <button class="footer__submit" type="submit">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="{% static 'js/captcha.js' %}"></script>
+    <script src="{% static 'js/fslightbox.js' %}"></script>
+    <script>
+      (function () {
+        function initFormatSelect(wrapper) {
+          const trigger = wrapper.querySelector(".format-select__trigger");
+          const label = wrapper.querySelector("[data-label]");
+          const list = wrapper.querySelector(".format-select__options");
+          const options = Array.from(
+            wrapper.querySelectorAll(".format-select__option"),
+          );
+          const nativeSelect = wrapper.querySelector(".format-select__native");
+
+          let activeIndex = -1;
+
+          function isOpen() {
+            return wrapper.getAttribute("data-open") === "true";
+          }
+
+          function open() {
+            wrapper.setAttribute("data-open", "true");
+            trigger.setAttribute("aria-expanded", "true");
+          }
+
+          function close() {
+            wrapper.setAttribute("data-open", "false");
+            trigger.setAttribute("aria-expanded", "false");
+            list.removeAttribute("aria-activedescendant");
+            options.forEach((o) => o.classList.remove("is-active"));
+            activeIndex = -1;
+          }
+
+          function toggle() {
+            isOpen() ? close() : open();
+          }
+
+          function selectOption(option) {
+            options.forEach((o) => o.setAttribute("aria-selected", "false"));
+            option.setAttribute("aria-selected", "true");
+
+            // Если есть отдельный span для метки — обновляем его, иначе можно писать прямо в .format-select__label
+            const labelSpan = wrapper.querySelector("[data-label]");
+            if (labelSpan) {
+              labelSpan.textContent = option.textContent;
+            }
+
+            nativeSelect.value = option.dataset.value;
+            nativeSelect.dispatchEvent(new Event("change", { bubbles: true }));
+            close();
+            trigger.focus();
+          }
+
+          trigger.addEventListener("click", toggle);
+
+          options.forEach((option) => {
+            option.addEventListener("click", () => selectOption(option));
+          });
+
+          // Клик вне компонента закрывает список
+          document.addEventListener("click", (e) => {
+            if (!wrapper.contains(e.target)) close();
+          });
+
+          // Клавиатура: Enter/Space — открыть/выбрать, стрелки — навигация, Esc — закрыть
+          wrapper.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+              close();
+              trigger.focus();
+              return;
+            }
+
+            if (e.key === "Enter" || e.key === " ") {
+              if (document.activeElement === trigger) {
+                e.preventDefault();
+                toggle();
+              } else if (isOpen() && activeIndex > -1) {
+                e.preventDefault();
+                selectOption(options[activeIndex]);
+              }
+              return;
+            }
+
+            if (isOpen() && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
+              e.preventDefault();
+              if (activeIndex === -1) {
+                activeIndex = 0;
+              } else if (e.key === "ArrowDown") {
+                activeIndex = Math.min(activeIndex + 1, options.length - 1);
+              } else {
+                activeIndex = Math.max(activeIndex - 1, 0);
+              }
+
+              options.forEach((o) => o.classList.remove("is-active"));
+              options[activeIndex].classList.add("is-active");
+              list.setAttribute(
+                "aria-activedescendant",
+                options[activeIndex].id,
+              );
+            }
+          });
+        }
+
+        const components = document.querySelectorAll(".format-select");
+        components.forEach((wrapper) => initFormatSelect(wrapper));
+      })();
+    </script>
   </body>
 </html>

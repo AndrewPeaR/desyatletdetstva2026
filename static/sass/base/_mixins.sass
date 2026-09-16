@@ -10,3 +10,25 @@
         animation-name: $name
         animation-duration: 3s
         animation-timing-function: ease
+
+@mixin mediaLaptop
+    @media screen and (max-width: 1260px)
+        @content
+@mixin mediaLargeTablet
+    @media screen and (max-width: 992px)
+        @content
+@mixin mediaTablet
+    @media screen and (max-width: 768px)
+        @content
+@mixin mediaSmallTablet
+    @media screen and (max-width: 640px)
+        @content
+@mixin mediaLargeMobile
+    @media screen and (max-width: 576px)
+        @content
+@mixin mediaMobile
+    @media screen and (max-width: 480px)
+        @content
+@mixin mediaSmallMobile
+    @media screen and (max-width: 374px)
+        @content
