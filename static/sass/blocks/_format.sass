@@ -2,7 +2,7 @@
 // Токены компонента: поменяйте значения под свою палитру/бренд
 $format-select-arrow: #A7B579
 $format-select-panel-bg: #D3CD8E
-$format-select-radius: 40px
+$format-select-radius: 16px
 
 .format-select
     position: relative
@@ -26,6 +26,7 @@ $format-select-radius: 40px
         font-weight: 800
         letter-spacing: .4px
         text-transform: uppercase
+        text-align: left
         color: $green
         cursor: pointer
         transition: box-shadow .2s ease
@@ -60,10 +61,12 @@ $format-select-radius: 40px
         right: 0
         margin: 0
         padding: 0
+        max-height: 300px
+        overflow-y: auto
         list-style: none
         background: $format-select-panel-bg
         border-radius: $format-select-radius
-        overflow: hidden
+        overflow-x: hidden
         box-shadow: 0 16px 32px rgba(0, 0, 0, .1)
         opacity: 0
         visibility: hidden

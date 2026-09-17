@@ -286,6 +286,11 @@ html {
       outline: none; }
   .register__input_height {
     height: 80px; }
+  .register .field-error {
+    margin-top: 4px; }
+    .register .field-error span {
+      color: #DA3815;
+      font-size: 14px; }
 
 .format-select {
   position: relative;
@@ -301,13 +306,14 @@ html {
     gap: 16px;
     background: #fff;
     border: 3px solid #7C8B3E;
-    border-radius: 40px;
+    border-radius: 16px;
     padding: 22px 34px;
     font: inherit;
     font-size: 16px;
     font-weight: 800;
     letter-spacing: .4px;
     text-transform: uppercase;
+    text-align: left;
     color: #3C5C26;
     cursor: pointer;
     transition: box-shadow .2s ease; }
@@ -339,10 +345,12 @@ html {
     right: 0;
     margin: 0;
     padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
     list-style: none;
     background: #D3CD8E;
-    border-radius: 40px;
-    overflow: hidden;
+    border-radius: 16px;
+    overflow-x: hidden;
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
     opacity: 0;
     visibility: hidden;
@@ -384,6 +392,49 @@ html {
   transform: translateY(0);
   pointer-events: auto; }
 
+.popup {
+  position: fixed;
+  z-index: 999;
+  top: 50px;
+  right: -50px;
+  height: 80px;
+  max-width: 500px;
+  border-radius: 16px;
+  padding: 12px 24px;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .popup_success {
+    background-color: #478031; }
+  .popup_error {
+    background-color: #DA3815; }
+  .popup p {
+    font-family: "Arodora Pro", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #ffffff; }
+  .popup.show {
+    animation: animatePopup 0.4s ease-out forwards; }
+  .popup.hide {
+    animation: hidePopup 0.4s ease-in forwards; }
+
+@keyframes animatePopup {
+  0% {
+    right: -50px;
+    opacity: 0; }
+  100% {
+    right: 50px;
+    opacity: 1; } }
+
+@keyframes hidePopup {
+  0% {
+    right: 50px;
+    opacity: 1; }
+  100% {
+    right: -50px;
+    opacity: 0; } }
+
 .footer__background {
   background-color: #3C5C26;
   padding-top: 75px;
@@ -422,7 +473,7 @@ html {
     .footer__title {
       font-size: 28px; } }
 .footer__text {
-  font-family: 'Arodora Pro', sans-serif;
+  font-family: "Arodora Pro", sans-serif;
   transition: all 0.2s ease-out;
   font-size: 24px;
   font-weight: 300;

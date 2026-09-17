@@ -64,23 +64,19 @@ class RegisterForm(forms.Form, forms.ModelForm):
 
     placeOne_choises = {
         "": "Выберете элемент",
-        "prozvet": "Проектная мастерская «Процветание»",
-        "history": "Проектная мастерская «История»",
-        "inklusion": "Проектная мастерская «Инклюзия»",
-        "family": "Проектная мастерская  «Семья»",
-        "mir": "Проектная мастерская «Мир»",
-        "laboratory": "Проектная мастерская «Лаборатория»",
-        "iniciativa": "Проектная мастерская «Инициатива»",
+        "prozvet": "Лаборатория «Здоровье семьи – здоровье нации»",
+        "history": "Лаборатория «Социальная безопасность семьи и детства»",
+        "inklusion": "Лаборатория «Развитие родительских компетенций»",
     }
 
     fio = forms.CharField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "fio"}), label='', required=True)
     category = forms.ChoiceField(choices=category_choices, widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "id": 'category', "required": "required"}), label='', required=True)
     city = forms.ChoiceField(choices=cities_choises ,widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "id": 'city', "required": "required"}), label='', required=True)
     phone = forms.CharField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "phone"}), label='', required=True)
-    email = forms.CharField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "email"}), label='', required=True)
+    email = forms.EmailField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "email"}), label='', required=True)
     place = forms.ChoiceField(choices=placeOne_choises ,widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "id": 'place', "required": "required"}), label='', required=True)
     format = forms.ChoiceField(choices=format_choices, widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "required": "required"}), label='', required=True)
-    message = forms.CharField(widget=forms.Textarea(attrs={"class":"register__input", 'rows': 5, "id": "message"}), label='', required=True)
+    message = forms.CharField(widget=forms.Textarea(attrs={"class":"register__input", 'rows': 5, "id": "message"}), label='', required=False)
     policy = forms.BooleanField(widget=forms.CheckboxInput(attrs={"class":"register__checkbox-input", 'id': 'register__input-policy'}), label='', required=True)
 
     class Meta:

@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import *
 from .forms import RegisterForm, FeedbackForm, checkCaptcha
 # Create your views here.
@@ -16,11 +17,14 @@ def index(request):
                 if checkCaptcha(request, 'register'):
                     register = form.save(commit=False)
                     register.save()
+                    messages.success(request, 'Регистрация прошла успешно!')
+                    return redirect('/')
                 else:
-                    print("Robot")
+                    messages.error(request, 'Проверка капчи не пройдена')
+                    registerForm = form
             else:
-                print('Register Form invalid')
-                print(form.errors)
+                messages.error(request, 'Форма заполнена неверно')
+                registerForm = form
 
         elif 'feedback_submit' in request.POST:
             form = FeedbackForm(request.POST)
@@ -28,10 +32,15 @@ def index(request):
                 if checkCaptcha(request, 'feedback'):
                     feedback = form.save(commit=False)
                     feedback.save()
+                    messages.success(request, 'Сообщение отправлено!')
+                    return redirect('/')
                 else:
-                    print("Robot")
+                    messages.error(request, 'Проверка капчи не пройдена')
+                    feedbackForm = form
             else:
-                print('Feedback Form invalid')
+                messages.error(request, 'Форма заполнена неверно')
+                feedbackForm = form
+
     
     context = {
         "feedbackForm": feedbackForm,

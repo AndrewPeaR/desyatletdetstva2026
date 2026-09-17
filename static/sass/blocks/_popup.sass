@@ -1,0 +1,45 @@
+.popup
+    position: fixed
+    z-index: 999
+    top: 50px
+    right: -50px
+    height: 80px
+    max-width: 500px
+    border-radius: 16px
+    padding: 12px 24px
+    opacity: 0
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &_success
+        background-color: $light-green
+    &_error
+        background-color: $red
+
+    p
+        font-family: $font-accent
+        @include font-styles(20px, 400, $white)
+
+    &.show
+        animation: animatePopup 0.4s ease-out forwards
+
+    &.hide
+        animation: hidePopup 0.4s ease-in forwards
+
+
+@keyframes animatePopup
+    0%
+        right: -50px
+        opacity: 0
+    100%
+        right: 50px
+        opacity: 1
+
+@keyframes hidePopup
+    0%
+        right: 50px
+        opacity: 1
+    100%
+        right: -50px
+        opacity: 0

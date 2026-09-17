@@ -53,13 +53,9 @@ class Register (models.Model):
     }
 
     PLACE_ONE = {
-        "prozvet": "Проектная мастерская «Процветание»",
-        "history": "Проектная мастерская «История»",
-        "inklusion": "Проектная мастерская «Инклюзия»",
-        "family": "Проектная мастерская  «Семья»",
-        "mir": "Проектная мастерская «Мир»",
-        "laboratory": "Проектная мастерская «Лаборатория»",
-        "iniciativa": "Проектная мастерская «Инициатива»",
+        "prozvet": "Лаборатория «Здоровье семьи – здоровье нации»",
+        "history": "Лаборатория «Социальная безопасность семьи и детства»",
+        "inklusion": "Лаборатория «Развитие родительских компетенций»",
     }
 
     fio = models.CharField(max_length=250, verbose_name="ФИО")
@@ -69,7 +65,7 @@ class Register (models.Model):
     email = models.CharField(max_length=50, verbose_name='Email')
     place = models.CharField(max_length=20, choices=PLACE_ONE, verbose_name='Площадка, которую хотите посетить')
     format = models.CharField(max_length=3, choices=CHOISES, verbose_name='Формат участия')
-    message = models.TextField(verbose_name='Доп. информация для организаторов')
+    message = models.TextField(verbose_name='Доп. информация для организаторов', null=True, blank=True)
     policy = models.BooleanField(default=False, verbose_name='Согласие на обработку')
 
     class Meta:

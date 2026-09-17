@@ -74,8 +74,17 @@
 
     <div class="video">
       <div class="wrapper">
-        <a class="video__block" data-fslightbox="video" data-autoplay href="{% static 'video/mainvideo.webm' %}">
-          <img class="video__play" src="{% static 'img/icons/play.svg' %}" alt="play">
+        <a
+          class="video__block"
+          data-fslightbox="video"
+          data-autoplay
+          href="{% static 'video/mainvideo.webm' %}"
+        >
+          <img
+            class="video__play"
+            src="{% static 'img/icons/play.svg' %}"
+            alt="play"
+          />
         </a>
         <img
           class="video__background_1"
@@ -104,12 +113,13 @@
           <input type="hidden" name="register_submit" value="1" />
           <div class="register__input-wrapper">
             <label class="register__label" for="fio">ФИО</label>
-            {{ registerForm.fio }}
-            <!-- <input
-              class="register__input register__input_height"
-              id="fio"
-              type="text"
-            /> -->
+            {{ registerForm.fio }} {% if registerForm.username.errors %}
+            <div class="field-error">
+              {% for error in registerForm.username.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
           <div class="format-select" data-open="false">
             <button
@@ -296,6 +306,13 @@
               </li>
             </ul>
             {{registerForm.category}}
+            {% if registerForm.category.errors %}
+            <div class="field-error">
+              {% for error in registerForm.category.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
           <div class="format-select" data-open="false">
             <button
@@ -305,7 +322,9 @@
               aria-expanded="false"
               id="formatTriggerCity"
             >
-              <span class="format-select__label">Муниципальное образование</span>
+              <span class="format-select__label"
+                >Муниципальное образование</span
+              >
               <span data-label></span>
               <svg
                 class="format-select__arrow"
@@ -348,7 +367,7 @@
                 data-value="berezraion"
                 aria-selected="false"
               >
-              Берёзовский район
+                Берёзовский район
               </li>
               <li
                 class="format-select__option"
@@ -532,8 +551,15 @@
               </li>
             </ul>
             {{registerForm.city}}
+            {% if registerForm.city.errors %}
+            <div class="field-error">
+              {% for error in registerForm.city.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
-          
+
           <div class="format-select" data-open="false">
             <button
               type="button"
@@ -542,7 +568,9 @@
               aria-expanded="false"
               id="formatTriggerPlace"
             >
-              <span class="format-select__label">Площадка, которую хотите посетить</span>
+              <span class="format-select__label"
+                >Площадка, которую хотите посетить</span
+              >
               <span data-label></span>
               <svg
                 class="format-select__arrow"
@@ -576,7 +604,7 @@
                 data-value="prozvet"
                 aria-selected="false"
               >
-                Проектная мастерская «Процветание» 
+                Лаборатория «Здоровье семьи – здоровье нации»
               </li>
               <li
                 class="format-select__option"
@@ -585,7 +613,7 @@
                 data-value="history"
                 aria-selected="false"
               >
-              Проектная мастерская «История» 
+                Лаборатория «Социальная безопасность семьи и детства»
               </li>
               <li
                 class="format-select__option"
@@ -594,59 +622,32 @@
                 data-value="inklusion"
                 aria-selected="false"
               >
-                Проектная мастерская «Инклюзия»
-              </li>
-              <li
-                class="format-select__option"
-                role="option"
-                id="opt-family"
-                data-value="family"
-                aria-selected="false"
-              >
-                Проектная мастерская  «Семья»
-              </li>
-              <li
-                class="format-select__option"
-                role="option"
-                id="opt-mir"
-                data-value="mir"
-                aria-selected="false"
-              >
-                Проектная мастерская «Мир»
-              </li>
-              <li
-                class="format-select__option"
-                role="option"
-                id="opt-laboratory"
-                data-value="laboratory"
-                aria-selected="false"
-              >
-                Проектная мастерская «Лаборатория»
-              </li>
-              <li
-                class="format-select__option"
-                role="option"
-                id="opt-iniciativa"
-                data-value="iniciativa"
-                aria-selected="false"
-              >
-                Проектная мастерская «Инициатива»
+                Лаборатория «Развитие родительских компетенций»
               </li>
             </ul>
             {{registerForm.place}}
           </div>
-          
+
           <div class="register__input-wrapper">
-            <label class="register__label" for="place"
-              >Номер телефона</label
-            >
-            {{ registerForm.phone }}
+            <label class="register__label" for="place">Номер телефона</label>
+            {{ registerForm.phone }} {% if registerForm.phone.errors %}
+            <div class="field-error">
+              {% for error in registerForm.phone.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
           <div class="register__input-wrapper">
-            <label class="register__label" for="city"
-              >Email</label
-            >
+            <label class="register__label" for="city">Email</label>
             {{ registerForm.email }}
+            {% if registerForm.email.errors %}
+            <div class="field-error">
+              {% for error in registerForm.email.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
           <div class="format-select" data-open="false">
             <button
@@ -705,6 +706,13 @@
 
             <!-- реальный select — именно он попадёт в данные формы -->
             {{registerForm.format}}
+            {% if registerForm.format.errors %}
+            <div class="field-error">
+              {% for error in registerForm.format.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
             <!-- <select
               name="format"
               class="format-select__native"
@@ -727,6 +735,13 @@
               rows="5"
             ></textarea> -->
             {{ registerForm.message }}
+            {% if registerForm.message.errors %}
+            <div class="field-error">
+              {% for error in registerForm.message.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
           <label class="register__checkbox-wrapper">
             <!-- <input class="register__checkbox-input" id="register__input-policy" type="checkbox"> -->
@@ -745,9 +760,15 @@
               </p>
             </label>
           </label>
+          {% if registerForm.policy.errors %}
+            <div class="field-error">
+              {% for error in registerForm.policy.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
           <div id="captcha-container1"></div>
           <button class="register__submit" type="submit">Отправить</button>
-          {{registerForm.errors}}
         </form>
       </div>
     </section>
@@ -858,8 +879,51 @@
       </div>
     </footer>
 
+    {% if messages %}
+    <div id="django-messages" style="display: none">
+      {% for message in messages %}
+      <div class="django-message" data-tags="{{ message.tags }}">
+        {{message}}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="popup">
+      <p></p>
+    </div>
+
     <script src="{% static 'js/captcha.js' %}"></script>
     <script src="{% static 'js/fslightbox.js' %}"></script>
+    <script>
+      function showPopup(text, type = "success") {
+        const popup = document.querySelector(".popup");
+        popup.querySelector("p").textContent = text;
+
+        popup.classList.remove('popup_success', 'popup_error');
+        popup.classList.add(`popup_${type}`);
+
+        popup.classList.remove("hide");
+        popup.classList.add("show");
+
+        setTimeout(() => {
+          popup.classList.remove("show");
+          popup.classList.add("hide");
+        }, 5000);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const messagesBlock = document.getElementById("django-messages");
+        if (messagesBlock) {
+          const items = messagesBlock.querySelectorAll(".django-message");
+          items.forEach((item) => {
+            const text = item.textContent.trim();
+            const type = item.dataset.tags; // 'success' или 'error'
+            showPopup(text, type); // ваша функция показа попапа
+          });
+        }
+      });
+    </script>
     <script>
       (function () {
         function initFormatSelect(wrapper) {
