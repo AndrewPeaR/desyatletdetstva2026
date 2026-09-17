@@ -286,6 +286,11 @@ html {
       outline: none; }
   .register__input_height {
     height: 80px; }
+  .register__policy {
+    color: #551A8B;
+    transition: all 0.2s ease-out; }
+    .register__policy:hover {
+      color: #0000EE; }
   .register .field-error {
     margin-top: 4px; }
     .register .field-error span {
@@ -434,6 +439,57 @@ html {
   100% {
     right: -50px;
     opacity: 0; } }
+
+.cookie-banner {
+  position: fixed;
+  z-index: 998;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+  background-color: #CFD09E;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-out; }
+  .cookie-banner.show {
+    transform: translateY(0); }
+  .cookie-banner p {
+    margin: 0;
+    font-family: "Arodora Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff; }
+    .cookie-banner p a {
+      font-family: "Arodora Pro", sans-serif;
+      color: #478031;
+      text-decoration: underline; }
+      .cookie-banner p a:hover {
+        text-decoration: none; }
+  .cookie-banner__actions {
+    flex-shrink: 0; }
+  .cookie-banner__btn {
+    padding: 10px 28px;
+    border: none;
+    border-radius: 16px;
+    background-color: #478031;
+    cursor: pointer;
+    font-family: "Arodora Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: opacity 0.2s ease; }
+    .cookie-banner__btn:hover {
+      opacity: 0.85; }
+
+@media (max-width: 600px) {
+  .cookie-banner {
+    padding: 16px 20px;
+    justify-content: flex-start;
+    text-align: left; } }
 
 .footer__background {
   background-color: #3C5C26;

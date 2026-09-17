@@ -305,8 +305,7 @@
                 Другое
               </li>
             </ul>
-            {{registerForm.category}}
-            {% if registerForm.category.errors %}
+            {{registerForm.category}} {% if registerForm.category.errors %}
             <div class="field-error">
               {% for error in registerForm.category.errors %}
               <span>{{ error }}</span>
@@ -550,8 +549,7 @@
                 Югорск
               </li>
             </ul>
-            {{registerForm.city}}
-            {% if registerForm.city.errors %}
+            {{registerForm.city}} {% if registerForm.city.errors %}
             <div class="field-error">
               {% for error in registerForm.city.errors %}
               <span>{{ error }}</span>
@@ -640,8 +638,7 @@
           </div>
           <div class="register__input-wrapper">
             <label class="register__label" for="city">Email</label>
-            {{ registerForm.email }}
-            {% if registerForm.email.errors %}
+            {{ registerForm.email }} {% if registerForm.email.errors %}
             <div class="field-error">
               {% for error in registerForm.email.errors %}
               <span>{{ error }}</span>
@@ -705,8 +702,7 @@
             </ul>
 
             <!-- реальный select — именно он попадёт в данные формы -->
-            {{registerForm.format}}
-            {% if registerForm.format.errors %}
+            {{registerForm.format}} {% if registerForm.format.errors %}
             <div class="field-error">
               {% for error in registerForm.format.errors %}
               <span>{{ error }}</span>
@@ -734,8 +730,7 @@
               type="text"
               rows="5"
             ></textarea> -->
-            {{ registerForm.message }}
-            {% if registerForm.message.errors %}
+            {{ registerForm.message }} {% if registerForm.message.errors %}
             <div class="field-error">
               {% for error in registerForm.message.errors %}
               <span>{{ error }}</span>
@@ -750,23 +745,23 @@
             <label for="register__input-policy" class="register__checkbox">
               <p>
                 Отправляя форму я подтверждаю, что я ознакомился с
-                <a class="register__policy" href="#"
+                <a class="register__policy" target="_blank" href="{% static 'docs/policy-konfiden.pdf' %}"
                   >политикой конфиденциальности</a
                 >
                 и даю согласие на
-                <a class="regsiter__policy" href="#"
+                <a class="register__policy" target="_blank" href="{% static 'docs/soglasie-pdn.docx' %}"
                   >обработку персональных данных</a
                 >
               </p>
             </label>
           </label>
           {% if registerForm.policy.errors %}
-            <div class="field-error">
-              {% for error in registerForm.policy.errors %}
-              <span>{{ error }}</span>
-              {% endfor %}
-            </div>
-            {% endif %}
+          <div class="field-error">
+            {% for error in registerForm.policy.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
           <div id="captcha-container1"></div>
           <button class="register__submit" type="submit">Отправить</button>
         </form>
@@ -861,11 +856,11 @@
                 <label for="footer__input-policy" class="footer__checkbox">
                   <p>
                     Отправляя форму я подтверждаю, что я ознакомился с
-                    <a class="footer__policy" href="#"
+                    <a class="footer__policy" target="_blank" href="{% static 'docs/policy-konfiden.pdf' %}"
                       >политикой конфиденциальности</a
                     >
                     и даю согласие на
-                    <a class="footer__policy" href="#"
+                    <a class="footer__policy" target="_blank" href="{% static 'docs/soglasie-pdn.docx' %}"
                       >обработку персональных данных</a
                     >
                   </p>
@@ -878,6 +873,21 @@
         </div>
       </div>
     </footer>
+
+    <div class="cookie-banner" id="cookieBanner">
+      <p>
+        Мы используем файлы cookie для улучшения работы сайта. Продолжая
+        пользоваться сайтом, вы соглашаетесь с
+        <a href="{% static 'docs/policy-konfiden.pdf' %}" target="_blank"
+          >политикой конфиденциальности</a
+        >.
+      </p>
+      <div class="cookie-banner__actions">
+        <button type="button" class="cookie-banner__btn" id="cookieAccept">
+          Принять
+        </button>
+      </div>
+    </div>
 
     {% if messages %}
     <div id="django-messages" style="display: none">
@@ -900,7 +910,7 @@
         const popup = document.querySelector(".popup");
         popup.querySelector("p").textContent = text;
 
-        popup.classList.remove('popup_success', 'popup_error');
+        popup.classList.remove("popup_success", "popup_error");
         popup.classList.add(`popup_${type}`);
 
         popup.classList.remove("hide");
@@ -922,6 +932,35 @@
             showPopup(text, type); // ваша функция показа попапа
           });
         }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cookieBanner = document.getElementById("cookieBanner");
+        const cookieAcceptBtn = document.getElementById("cookieAccept");
+
+        if (!cookieBanner) return;
+
+        const isAccepted = localStorage.getItem("cookiesAccepted");
+
+        if (!isAccepted) {
+          // небольшая задержка, чтобы transform точно сработал (не был "мгновенным")
+          setTimeout(() => {
+            cookieBanner.classList.add("show");
+          }, 300);
+        } else {
+          cookieBanner.style.display = "none";
+        }
+
+        cookieAcceptBtn.addEventListener("click", function () {
+          localStorage.setItem("cookiesAccepted", "true");
+          cookieBanner.classList.remove("show");
+
+          // убираем из DOM-потока после завершения анимации
+          setTimeout(() => {
+            cookieBanner.style.display = "none";
+          }, 400); // совпадает с transition-duration
+        });
       });
     </script>
     <script>

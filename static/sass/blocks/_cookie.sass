@@ -1,0 +1,53 @@
+.cookie-banner
+    position: fixed
+    z-index: 998
+    left: 0
+    bottom: 0
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 24px
+    flex-wrap: wrap
+    padding: 20px 40px
+    background-color: $background-brown // подставьте свой тёмный/нейтральный цвет
+    transform: translateY(100%)
+    transition: transform 0.4s ease-out
+
+    &.show
+        transform: translateY(0)
+
+    p
+        margin: 0
+        font-family: $font-accent
+        @include font-styles(16px, 400, $white)
+
+        a
+            font-family: $font-accent
+            color: $light-green
+            text-decoration: underline
+
+            &:hover
+                text-decoration: none
+
+    &__actions
+        flex-shrink: 0
+
+    &__btn
+        padding: 10px 28px
+        border: none
+        border-radius: 16px
+        background-color: $light-green
+        cursor: pointer
+        font-family: $font-accent
+        @include font-styles(16px, 500, $white)
+        transition: opacity 0.2s ease
+
+        &:hover
+            opacity: 0.85
+
+@media (max-width: 600px)
+    .cookie-banner
+        padding: 16px 20px
+        justify-content: flex-start
+        text-align: left
