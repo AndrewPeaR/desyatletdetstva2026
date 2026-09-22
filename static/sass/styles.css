@@ -103,15 +103,20 @@ html {
     position: relative; }
   .hero__backgrounds {
     position: absolute;
+    z-index: 1;
     top: -80px;
     right: -190px; }
   .hero__header {
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 2;
     gap: 60px;
     margin-bottom: 45px; }
   .hero__info {
-    margin-bottom: 55px; }
+    margin-bottom: 55px;
+    position: relative;
+    z-index: 2; }
   .hero__subtitle {
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -130,7 +135,9 @@ html {
   .hero__controls {
     display: flex;
     align-items: center;
-    gap: 70px; }
+    gap: 70px;
+    position: relative;
+    z-index: 2; }
   .hero__date {
     margin-bottom: 5px;
     text-transform: uppercase;
