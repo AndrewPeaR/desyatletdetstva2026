@@ -190,12 +190,127 @@ html {
     left: 50%;
     transform: translate(-50%, -50%); }
 
+.programm__background {
+  padding: 22px 0;
+  height: 80px;
+  width: 100%;
+  background: url(../img/background-programm.svg);
+  background-repeat: repeat-x;
+  background-position: center; }
+
+.programm__header {
+  padding: 25px 0;
+  background-color: #D5E7C6; }
+
+.programm__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 400;
+  color: #3C5C26; }
+
+.programm__wrapper {
+  background-color: #3C5C26;
+  padding-top: 18px;
+  padding-bottom: 43px; }
+
+.programm__subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-size: 32px;
+  font-weight: 400;
+  color: #ffffff; }
+
+.programm__items {
+  display: flex;
+  justify-content: space-between; }
+
+.programm__speaker {
+  max-width: 185px; }
+
+.programm__photo {
+  max-width: 183px;
+  height: 183px;
+  overflow: hidden;
+  padding: 7px;
+  border: 1px solid #D5E7C6;
+  border-radius: 50%;
+  margin-bottom: 17px; }
+
+.programm__img-wrapper {
+  max-width: 170px;
+  height: 100%;
+  overflow: hidden;
+  background-color: #D5E7C6;
+  border-radius: 50%; }
+
+.programm__img {
+  width: 100%;
+  object-fit: cover; }
+
+.programm__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.programm__name {
+  text-align: center;
+  font-family: "Arodora Pro", sans-serif;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff; }
+
+.programm__city {
+  font-family: "Arodora Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff; }
+
+.schedule {
+  margin-bottom: 80px; }
+  .schedule__header {
+    padding: 14px 0;
+    background-color: #D5E7C6;
+    display: grid;
+    grid-template-columns: 200px 1fr 300px; }
+  .schedule__col-label {
+    font-family: "Arodora Pro", sans-serif;
+    display: flex;
+    justify-content: center;
+    font-weight: 700; }
+  .schedule__place {
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #F7EAD4; }
+  .schedule__row {
+    padding: 15px 0;
+    border-bottom: 1px dashed #706F6E;
+    display: grid;
+    grid-template-columns: 200px 1fr 300px; }
+    .schedule__row_clear {
+      border-bottom: unset; }
+  .schedule__cell {
+    padding: 0 5px;
+    justify-self: center;
+    align-self: center;
+    font-family: "Arodora Pro", sans-serif;
+    font-weight: 700; }
+    .schedule__cell_start {
+      justify-self: start; }
+
 .register {
   padding-top: 100px;
   margin-bottom: 80px;
   background-repeat: repeat-x;
   background-image: url("../img/register_background.svg");
-  background-position: center calc( 0% - 100px); }
+  background-position: center 0; }
   .register__title {
     display: flex;
     justify-content: center;
@@ -223,7 +338,7 @@ html {
     flex-shrink: 0;
     width: 24px;
     height: 24px;
-    border: 2px solid #8D943A;
+    border: 2px solid #7C8B3E;
     border-radius: 6px;
     position: relative; }
     .register__checkbox-box:after {
@@ -246,7 +361,7 @@ html {
     left: 0;
     z-index: -9; }
   .register__checkbox-input:checked ~ .register__checkbox-box {
-    background-color: #8D943A; }
+    background-color: #7C8B3E; }
     .register__checkbox-input:checked ~ .register__checkbox-box:after {
       opacity: 1; }
   .register__submit {
@@ -277,9 +392,10 @@ html {
     font-weight: 400;
     color: #3C5C26; }
   .register__input {
+    background-color: #ffffff;
     width: 100%;
     padding: 16px 24px;
-    border: 3px solid #8D943A;
+    border: 3px solid #7C8B3E;
     border-radius: 16px;
     outline: none;
     box-sizing: border-box;
@@ -403,6 +519,28 @@ html {
   visibility: visible;
   transform: translateY(0);
   pointer-events: auto; }
+
+.sessions {
+  padding: 78px 0 330px 0;
+  background-color: #CFD09E;
+  background-image: url("../img/session-bg.svg");
+  background-position: center top; }
+  .sessions .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 96px; }
+  .sessions__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .sessions__title {
+    text-align: center;
+    margin-bottom: 48px;
+    font-size: 48px;
+    font-weight: 400;
+    color: #EC6F16; }
+  .sessions__video {
+    width: 890px; }
 
 .popup {
   position: fixed;

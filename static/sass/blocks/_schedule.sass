@@ -1,0 +1,30 @@
+.schedule
+    margin-bottom: 80px
+    &__header
+        padding: 14px 0
+        background-color: $salat
+        @include schedule-grid
+    &__col-label
+        font-family: $font-accent
+        display: flex
+        justify-content: center
+        font-weight: 700
+    &__place
+        padding: 25px 0
+        display: flex
+        justify-content: center
+        background-color: $schedule
+    &__row
+        padding: 15px 0
+        border-bottom: 1px dashed #706F6E
+        @include schedule-grid
+        &_clear
+            border-bottom: unset
+    &__cell
+        padding: 0 5px
+        justify-self: center
+        align-self: center
+        font-family: $font-accent
+        font-weight: 700
+        &_start
+            justify-self: start

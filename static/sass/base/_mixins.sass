@@ -11,6 +11,10 @@
         animation-duration: 3s
         animation-timing-function: ease
 
+@mixin schedule-grid
+    display: grid
+    grid-template-columns: 200px 1fr 300px
+
 @mixin mediaLaptop
     @media screen and (max-width: 1260px)
         @content

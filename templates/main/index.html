@@ -61,7 +61,12 @@
             <p class="hero__date">22 - 23 октября</p>
             <p class="hero__city">г. Ханты-Мансийск</p>
           </div>
-          <a class="hero__programm" target="_blank" href="{% static 'docs/programma.pdf' %}">Программа</a>
+          <a
+            class="hero__programm"
+            target="_blank"
+            href="{% static 'docs/programma.pdf' %}"
+            >Программа</a
+          >
         </div>
         <div class="hero__backgrounds">
           <img
@@ -98,6 +103,219 @@
         />
       </div>
     </div>
+
+    <section class="programm">
+      <div class="programm__background"></div>
+      <div class="programm__header">
+        <h2 class="programm__title">Программа</h2>
+      </div>
+      <div class="programm__wrapper">
+        <h3 class="programm__subtitle">Спикеры</h3>
+        <div class="wrapper">
+          <div class="programm__items">
+            <div class="programm__speaker">
+              <div class="programm__photo">
+                <div class="programm__img-wrapper">
+                  <img
+                    class="programm__img"
+                    src="{% static 'img/speakers/belyaev.png' %}"
+                    alt="belyaev"
+                  />
+                </div>
+              </div>
+              <div class="programm__info">
+                <h4 class="programm__name">Беляев<br />Максим Анатольевич</h4>
+                <p class="programm__city">г. Уфа</p>
+              </div>
+            </div>
+            <div class="programm__speaker">
+              <div class="programm__photo">
+                <div class="programm__img-wrapper">
+                  <img
+                    class="programm__img"
+                    src="{% static 'img/speakers/silenok.png' %}"
+                    alt="silenok"
+                  />
+                </div>
+              </div>
+              <div class="programm__info">
+                <h4 class="programm__name">Силенок<br />Инна Казимировна</h4>
+                <p class="programm__city">г. Краснодар</p>
+              </div>
+            </div>
+            <div class="programm__speaker">
+              <div class="programm__photo">
+                <div class="programm__img-wrapper">
+                  <img
+                    class="programm__img"
+                    src="{% static 'img/speakers/kovaleva.png' %}"
+                    alt="kovaleva"
+                  />
+                </div>
+              </div>
+              <div class="programm__info">
+                <h4 class="programm__name">
+                  Ковалева<br />Анастасия Викторовна
+                </h4>
+                <p class="programm__city">г. Москва</p>
+              </div>
+            </div>
+            <div class="programm__speaker">
+              <div class="programm__photo">
+                <div class="programm__img-wrapper">
+                  <img
+                    class="programm__img"
+                    src="{% static 'img/speakers/milovan.png' %}"
+                    alt="milovan"
+                  />
+                </div>
+              </div>
+              <div class="programm__info">
+                <h4 class="programm__name">Милованов<br />Иван Петрович</h4>
+                <p class="programm__city">г. Санкт-Петербург</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="programm__background"></div>
+    </section>
+
+    <section class="schedule">
+      <div class="wrapper">
+        <div class="schedule__header">
+          <span class="schedule__col-label">Время</span>
+          <span class="schedule__col-label">Мероприятие</span>
+          <span class="schedule__col-label">Место</span>
+        </div>
+        <div class="schedule__place">
+          <p>Концертно-театральный центр «Югра-классик»</p>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">09:00 – 11:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Регистрация участников межрегионального форума «Десятилетие
+            детства. Счастливая семья — счастливые дети»</span
+          >
+          <span class="schedule__cell">Холл,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">09:00 – 13:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Фотовыставка «Россией Едины»</span
+          >
+          <span class="schedule__cell">Холл,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">09:00 – 13:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Фотопроект «Югра - это про любовь»</span
+          >
+          <span class="schedule__cell">Холл,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">09:00 – 13:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Родительская приемная «Семейный навигатор»</span
+          >
+          <span class="schedule__cell">Балкон арт-салона,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">09:00 – 13:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Детский пресс-центр</span
+          >
+          <span class="schedule__cell">Балкон арт-салона,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">09:00 – 13:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Выставка интерактивного оборудования «Фабрика интерактива»</span
+          >
+          <span class="schedule__cell">Балкон арт-салона,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">09:00 – 13:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Интерактив-карта «Собери мир Югры»</span
+          >
+          <span class="schedule__cell">Арт-салон,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">09:00 – 13:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Проведение семейных мастер-классов</span
+          >
+          <span class="schedule__cell">Арт-салон,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">11:00 – 12:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Церемония открытия межрегионального форума «Десятилетие детства. Счастливая семья - счастливые дети»</span
+          >
+          <span class="schedule__cell">Большой зал,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__row schedule__row_clear">
+          <span class="schedule__cell">12:00 – 13:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Кофе-брейк</span
+          >
+          <span class="schedule__cell">Венское кафе,<br /> КТЦ «Югра-Классик»</span>
+        </div>
+        <div class="schedule__place">
+          <p>Национальный центр «Россия»</p>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">14:00 – 15:40</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Семейный квиз</span
+          >
+          <span class="schedule__cell">Зал «Добро»,<br />НЦ «Россия»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">14:00 – 17:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Лаборатория «Здоровье семьи - здоровье нации»</span
+          >
+          <span class="schedule__cell">Зал «Обь»,<br />НЦ «Россия»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">14:00 – 17:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Лаборатория «Социальная безопасность семьи и детства»</span
+          >
+          <span class="schedule__cell">Зал «Казым»,<br />НЦ «Россия»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">14:00 – 17:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Лаборатория «Развитие родительских компетенций»</span
+          >
+          <span class="schedule__cell">Зал «Иртыш»,<br />НЦ «Россия»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">15:50 – 17:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Экскурсия по культурно-выставочному пространству</span
+          >
+          <span class="schedule__cell">Выставочное пространство,<br />НЦ «Россия»</span>
+        </div>
+        <div class="schedule__row">
+          <span class="schedule__cell">17:00 – 17:30</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Кофе-брейк</span
+          >
+          <span class="schedule__cell">Зал «Гастроряды»,<br />НЦ «Россия»</span>
+        </div>
+        <div class="schedule__row schedule__row_clear">
+          <span class="schedule__cell">17:30 – 18:00</span>
+          <span class="schedule__cell schedule__cell_start"
+            >Церемония закрытия межрегионального форума «Десятилетие детства. Счастливая семья - счастливые дети»</span
+          >
+          <span class="schedule__cell">Зал «Обь»,<br />НЦ «Россия»</span>
+        </div>
+      </div>
+    </section>
 
     <section class="register">
       <div class="wrapper">
@@ -745,11 +963,17 @@
             <label for="register__input-policy" class="register__checkbox">
               <p>
                 Отправляя форму я подтверждаю, что я ознакомился с
-                <a class="register__policy" target="_blank" href="{% static 'docs/policy-konfiden.pdf' %}"
+                <a
+                  class="register__policy"
+                  target="_blank"
+                  href="{% static 'docs/policy-konfiden.pdf' %}"
                   >политикой конфиденциальности</a
                 >
                 и даю согласие на
-                <a class="register__policy" target="_blank" href="{% static 'docs/soglasie-pdn.docx' %}"
+                <a
+                  class="register__policy"
+                  target="_blank"
+                  href="{% static 'docs/soglasie-pdn.docx' %}"
                   >обработку персональных данных</a
                 >
               </p>
@@ -768,22 +992,28 @@
       </div>
     </section>
 
-    <!-- <section class="sessions">
+    <section class="sessions">
       <div class="wrapper">
-        <div class="session__item">
-          <h2 class="session__title">Сессия</h2>
-          <div></div>
+        <div class="sessions__item">
+          <h2 class="sessions__title">Лаборатория<br />"Развитие родительских компетенций"</h2>
+          <div class="sessions__video">
+            <iframe src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239654&hash=5ba9bb7a5adcb4e4&hd=3" width="890" height="464" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
-        <div class="session__item">
-          <h2 class="session__title">Сессия</h2>
-          <div></div>
+        <div class="sessions__item">
+          <h2 class="sessions__title">Лаборатория<br />"Социальная безопасность семьи и детства"</h2>
+          <div class="sessions__video">
+            <iframe src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239655&hash=e6560f345722155d&hd=3" width="890" height="464" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
-        <div class="session__item">
-          <h2 class="session__title">Сессия</h2>
-          <div></div>
+        <div class="sessions__item">
+          <h2 class="sessions__title">Лаборатория<br />"Здоровье семьи - здоровье нации"</h2>
+          <div class="sessions__video">
+            <iframe src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239656&hash=21c213128c9a64bf&hd=3" width="890" height="464" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <footer class="footer">
       <div class="footer__background">
@@ -856,11 +1086,17 @@
                 <label for="footer__input-policy" class="footer__checkbox">
                   <p>
                     Отправляя форму я подтверждаю, что я ознакомился с
-                    <a class="footer__policy" target="_blank" href="{% static 'docs/policy-konfiden.pdf' %}"
+                    <a
+                      class="footer__policy"
+                      target="_blank"
+                      href="{% static 'docs/policy-konfiden.pdf' %}"
                       >политикой конфиденциальности</a
                     >
                     и даю согласие на
-                    <a class="footer__policy" target="_blank" href="{% static 'docs/soglasie-pdn.docx' %}"
+                    <a
+                      class="footer__policy"
+                      target="_blank"
+                      href="{% static 'docs/soglasie-pdn.docx' %}"
                       >обработку персональных данных</a
                     >
                   </p>

@@ -3,7 +3,8 @@
     margin-bottom: 80px
     background-repeat: repeat-x
     background-image: url('../img/register_background.svg')
-    background-position: center calc( 0% - 100px )
+    // background-position: center calc( 0% - 100px )
+    background-position: center 0
     &__title
         display: flex
         justify-content: center
@@ -30,7 +31,7 @@
         flex-shrink: 0
         width: 24px
         height: 24px
-        border: 2px solid $green-border
+        border: 2px solid $lightgreen-border
         border-radius: 6px
         position: relative
         &:after
@@ -53,7 +54,7 @@
         left: 0
         z-index: -9
     &__checkbox-input:checked ~ &__checkbox-box
-        background-color: $green-border
+        background-color: $lightgreen-border
         &:after
             opacity: 1
     &__submit
@@ -81,9 +82,11 @@
         @include font-styles(20px, 400, $green)
 
     &__input
+        background-color: $white
+
         width: 100%
         padding: 16px 24px
-        border: 3px solid $green-border
+        border: 3px solid $lightgreen-border
         border-radius: 16px
         outline: none
         box-sizing: border-box        

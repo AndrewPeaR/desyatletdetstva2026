@@ -1,0 +1,62 @@
+.programm
+    &__background
+        padding: 22px 0
+        height: 80px
+        width: 100%
+        background: url(../img/background-programm.svg)
+        background-repeat: repeat-x
+        background-position: center
+    &__header
+        padding: 25px 0
+        background-color: $salat
+    &__title
+        display: flex
+        justify-content: center
+        align-items: center
+        text-transform: uppercase
+        @include font-styles(48px, 400, $green)
+    &__wrapper
+        background-color: $green
+        padding-top: 18px
+        padding-bottom: 43px
+    &__subtitle
+        display: flex
+        justify-content: center
+        align-items: center
+        text-transform: uppercase
+        margin-bottom: 18px
+        @include font-styles(32px, 400, $white)
+    &__items
+        display: flex
+        justify-content: space-between
+    &__speaker
+        max-width: 185px
+    &__photo
+        max-width: 183px
+        height: 183px
+        overflow: hidden
+        padding: 7px
+        border: 1px solid $salat
+        border-radius: 50%
+        margin-bottom: 17px
+    &__img-wrapper
+        max-width: 170px
+        height: 100%
+        overflow: hidden
+        background-color: $salat
+        border-radius: 50%
+    &__img
+        width: 100%
+        object-fit: cover
+    &__info
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__name
+        text-align: center
+        font-family: $font-accent
+        margin-bottom: 15px
+        @include font-styles(16px, 700, $white)
+    &__city
+        font-family: $font-accent
+        @include font-styles(16px, 400, $white)
