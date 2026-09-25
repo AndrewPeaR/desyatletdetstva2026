@@ -296,6 +296,9 @@ html {
     grid-template-columns: 200px 1fr 300px; }
     .schedule__row_clear {
       border-bottom: unset; }
+    .schedule__row .schedule__cell:last-child {
+      justify-self: start;
+      padding-left: 30px; }
   .schedule__cell {
     padding: 0 5px;
     justify-self: center;
