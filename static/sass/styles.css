@@ -538,10 +538,18 @@ html {
     align-items: center; }
   .sessions__title {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     font-size: 48px;
     font-weight: 400;
     color: #EC6F16; }
+  .sessions__text {
+    font-family: "Arodora Pro", sans-serif;
+    text-align: center;
+    margin-bottom: 48px;
+    max-width: 850px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000; }
   .sessions__video {
     width: 890px; }
 
