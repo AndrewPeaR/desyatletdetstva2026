@@ -134,8 +134,9 @@ html {
       color: #478031; }
   .hero__controls {
     display: flex;
-    align-items: center;
-    gap: 70px;
+    flex-direction: column;
+    align-items: start;
+    gap: 35px;
     position: relative;
     z-index: 2; }
   .hero__date {
@@ -154,7 +155,7 @@ html {
     justify-content: center;
     align-items: center;
     background-color: #CFD09E;
-    padding: 35px;
+    padding: 32px;
     border-radius: 13px;
     color: #3C5C26;
     transition: all 0.2s ease-out; }
