@@ -65,7 +65,7 @@
         position: relative
         width: 100%
         max-width: 800px
-    &__input
+    &__input, &__textarea
         width: 100%
         padding: 16px 24px
         border: 3px solid $green-border
@@ -138,3 +138,9 @@
         @include font-styles(20px, 400, $green)
         &:hover
             filter: brightness(120%)
+    .field-error
+        margin-top: 7px
+        color: $red
+        background-color: $white
+        padding: 5px 15px
+        border-radius: 15px

@@ -87,11 +87,12 @@ class RegisterForm(forms.Form, forms.ModelForm):
 class FeedbackForm(forms.Form, forms.ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={"class":"footer__input", 'id': 'name'}), label='', required=True)
     email = forms.EmailField(widget=forms.TextInput(attrs={"class":"footer__input", 'id': 'email'}), label='', required=True)
+    message = forms.CharField(widget=forms.Textarea(attrs={"class":"footer__textarea", 'rows': 5}), label='', required=True)
     policy = forms.BooleanField(widget=forms.CheckboxInput(attrs={"class":"footer__checkbox-input", 'id': 'footer__input-policy'}), label='', required=True)
 
     class Meta:
         model = Feedback
-        fields = ('name', 'email', 'policy')
+        fields = ('name', 'email', 'message', 'policy')
 
 # Запрос на проверку введеной капчи
 def get_client_ip(request):

@@ -12,4 +12,4 @@ class RegisterAdmin(ImportExportModelAdmin):
 
 @admin.register(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'email', 'policy')
+    list_display = ('id', 'name', 'email', 'message', 'policy')

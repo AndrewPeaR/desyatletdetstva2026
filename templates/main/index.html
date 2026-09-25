@@ -17,12 +17,24 @@
       href=" {% static 'img/favicon.ico' %}"
     />
 
-    <meta name="description" content="Межрегиональный форум «Десятилетие детства. Счастливая семья – счастливые дети» 22 - 23 октября г. Ханты-Мансийск">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://desyatiletiedetstva.ru/">
-    <meta property="og:title" content="Межрегиональный форум «Десятилетие детства. Счастливая семья – счастливые дети» 22 - 23 октября. г. Ханты-Мансийск">
-    <meta property="og:description" content="Межрегиональный форум «Десятилетие детства. Счастливая семья – счастливые дети» 22 - 23 октября. г. Ханты-Мансийск. Его цель — создать площадку для диалога: объединить родителей, специалистов (психологов, социальных работников, педагогов), представителей НКО и власти, чтобы вместе обсуждать актуальные вопросы и тиражировать успешные практики поддержки семей.">
-    <meta property="og:image" content="https://desyatiletiedetstva.ru/static/img/poster.jpg">    
+    <meta
+      name="description"
+      content="Межрегиональный форум «Десятилетие детства. Счастливая семья – счастливые дети» 22 - 23 октября г. Ханты-Мансийск"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://desyatiletiedetstva.ru" />
+    <meta
+      property="og:title"
+      content="Межрегиональный форум «Десятилетие детства. Счастливая семья – счастливые дети» 22 - 23 октября. г. Ханты-Мансийск"
+    />
+    <meta
+      property="og:description"
+      content="Межрегиональный форум «Десятилетие детства. Счастливая семья – счастливые дети» 22 - 23 октября. г. Ханты-Мансийск. Его цель — создать площадку для диалога: объединить родителей, специалистов (психологов, социальных работников, педагогов), представителей НКО и власти, чтобы вместе обсуждать актуальные вопросы и тиражировать успешные практики поддержки семей."
+    />
+    <meta
+      property="og:image"
+      content="https://desyatiletiedetstva.ru/img/poster.jpg"
+    />
 
     <script
       src="https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=onloadFunction"
@@ -1109,7 +1121,7 @@
       <div class="footer__background">
         <div class="wrapper footer__wrapper">
           <div class="footer__expirience">
-            <h2 class="footer__title">По вопросам обмена опытом</h2>
+            <h2 class="footer__title">Обратная связь</h2>
             <p class="footer__text">Фатыхова Карина Кадировна</p>
             <a class="footer__text footer__text_hover" href="tel:83467550558"
               >8(3462)550-558 (доб. 138)</a
@@ -1147,30 +1159,38 @@
             >
               {% csrf_token %}
               <input type="hidden" name="feedback_submit" value="1" />
-              <!-- <input class="footer__input" type="text" placeholder="Ваше имя" /> -->
               <div class="footer__input-wrapper">
                 <label class="footer__label" for="name">Имя</label>
-                {{feedbackForm.name}}
-                <!-- <input
-                    class="register__input register__input_height"
-                    id="fio"
-                    type="text"
-                  /> -->
+                {{feedbackForm.name}} {% if feedbackForm.name.errors %}
+            <div class="field-error">
+              {% for error in feedbackForm.name.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
               </div>
               <div class="footer__input-wrapper">
                 <label class="footer__label" for="email">Email</label>
-                {{feedbackForm.email}}
-                <!-- <input
-                    class="register__input register__input_height"
-                    id="fio"
-                    type="text"
-                  /> -->
+                {{feedbackForm.email}} {% if feedbackForm.email.errors %}
+            <div class="field-error">
+              {% for error in feedbackForm.email.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+              </div>
+              <div class="footer__input-wrapper">
+                <label class="footer__label" for="message">Сообщение</label
+                >{{feedbackForm.message}} {% if feedbackForm.message.errors %}
+            <div class="field-error">
+              {% for error in feedbackForm.message.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
               </div>
 
-              <!-- <input class="footer__input" type="text" placeholder="Ваша почта" /> -->
-
               <label class="footer__checkbox-wrapper">
-                <!-- <input class="register__checkbox-input" id="register__input-policy" type="checkbox"> -->
                 {{feedbackForm.policy}}
                 <div class="footer__checkbox-box"></div>
                 <label for="footer__input-policy" class="footer__checkbox">

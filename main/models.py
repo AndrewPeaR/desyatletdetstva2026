@@ -78,6 +78,7 @@ class Register (models.Model):
 class Feedback (models.Model):
     name = models.CharField(max_length=200, verbose_name="Имя")
     email = models.CharField(max_length=110, verbose_name="Электронная почта")
+    message = models.TextField(verbose_name='Текст сообщения')
     policy = models.BooleanField(default=False, verbose_name='Согласие на обработку')
 
     class Meta:
