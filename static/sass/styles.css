@@ -122,16 +122,12 @@ html {
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 400;
-    color: #DA3815; }
+    color: #EC6F16; }
   .hero__title {
     text-transform: uppercase;
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 400;
-    color: #DA3815; }
-    .hero__title span {
-      font-size: 48px;
-      font-weight: 400;
-      color: #478031; }
+    color: #478031; }
   .hero__controls {
     display: flex;
     flex-direction: column;
@@ -232,7 +228,12 @@ html {
   justify-content: space-between; }
 
 .programm__speaker {
-  max-width: 185px; }
+  max-width: 185px;
+  border-radius: 8px;
+  transition: all 0.2s ease-out; }
+  .programm__speaker:hover {
+    cursor: pointer;
+    background-color: #47803185; }
 
 .programm__photo {
   max-width: 183px;
@@ -554,7 +555,7 @@ html {
   .sessions__video {
     width: 890px; }
 
-.popup {
+.mine-popup {
   position: fixed;
   z-index: 999;
   top: 50px;
@@ -567,18 +568,18 @@ html {
   display: flex;
   align-items: center;
   justify-content: center; }
-  .popup_success {
+  .mine-popup_success {
     background-color: #478031; }
-  .popup_error {
+  .mine-popup_error {
     background-color: #DA3815; }
-  .popup p {
+  .mine-popup p {
     font-family: "Arodora Pro", sans-serif;
     font-size: 20px;
     font-weight: 400;
     color: #ffffff; }
-  .popup.show {
+  .mine-popup.show {
     animation: animatePopup 0.4s ease-out forwards; }
-  .popup.hide {
+  .mine-popup.hide {
     animation: hidePopup 0.4s ease-in forwards; }
 
 @keyframes animatePopup {
@@ -596,6 +597,20 @@ html {
   100% {
     right: -50px;
     opacity: 0; } }
+
+.popup-body .subtitle-font {
+  font-family: "DaysSansBlack", sans-serif; }
+
+.popup-body p:nth-child(1), .popup-body p:nth-child(2) {
+  display: flex;
+  justify-content: center; }
+
+.popup-body p, .popup-body span {
+  font-family: "Arodora Pro", sans-serif;
+  font-size: 16px; }
+
+.popup-body img {
+  max-width: 300px; }
 
 .cookie-banner {
   position: fixed;

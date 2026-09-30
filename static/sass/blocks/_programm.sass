@@ -31,6 +31,11 @@
         justify-content: space-between
     &__speaker
         max-width: 185px
+        border-radius: 8px
+        @include transition
+        &:hover
+            cursor: pointer
+            background-color: $light-greenOpacity
     &__photo
         max-width: 183px
         height: 183px
