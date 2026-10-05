@@ -189,7 +189,7 @@
     </section>
 
     <section class="schedule">
-      <div class="wrapper">
+      <div class="wrapper schedule__wrapper">
         <div class="schedule__header">
           <span class="schedule__col-label">Время</span>
           <span class="schedule__col-label">Мероприятие</span>
@@ -359,6 +359,54 @@
               allowfullscreen
             ></iframe>
           </div>
+          <div class="sessions__video_tablet">
+<iframe
+            src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239654&hash=5ba9bb7a5adcb4e4&hd=3"
+            width="570"
+            height="400"
+            allow="
+              autoplay;
+              encrypted-media;
+              fullscreen;
+              picture-in-picture;
+              screen-wake-lock;
+            "
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          </div>
+          <div class="sessions__video_mobile">
+<iframe
+            src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239654&hash=5ba9bb7a5adcb4e4&hd=3"
+            width="370"
+            height="220"
+            allow="
+              autoplay;
+              encrypted-media;
+              fullscreen;
+              picture-in-picture;
+              screen-wake-lock;
+            "
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          </div>
+          <div class="sessions__video_mini">
+<iframe
+            src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239654&hash=5ba9bb7a5adcb4e4&hd=3"
+            width="300"
+            height="300"
+            allow="
+              autoplay;
+              encrypted-media;
+              fullscreen;
+              picture-in-picture;
+              screen-wake-lock;
+            "
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          </div>
         </div>
         <div class="sessions__item">
           <h2 class="sessions__title">
@@ -384,6 +432,54 @@
               allowfullscreen
             ></iframe>
           </div>
+          <div class="sessions__video_tablet">
+            <iframe
+              src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239656&hash=21c213128c9a64bf&hd=3"
+              width="570"
+              height="400"
+              allow="
+                autoplay;
+                encrypted-media;
+                fullscreen;
+                picture-in-picture;
+                screen-wake-lock;
+              "
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="sessions__video_mobile">
+            <iframe
+              src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239656&hash=21c213128c9a64bf&hd=3"
+              width="370"
+              height="220"
+              allow="
+                autoplay;
+                encrypted-media;
+                fullscreen;
+                picture-in-picture;
+                screen-wake-lock;
+              "
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="sessions__video_mini">
+            <iframe
+              src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239656&hash=21c213128c9a64bf&hd=3"
+              width="300"
+              height="300"
+              allow="
+                autoplay;
+                encrypted-media;
+                fullscreen;
+                picture-in-picture;
+                screen-wake-lock;
+              "
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
         <div class="sessions__item">
           <h2 class="sessions__title">
@@ -398,6 +494,54 @@
               src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239655&hash=e6560f345722155d&hd=3"
               width="890"
               height="464"
+              allow="
+                autoplay;
+                encrypted-media;
+                fullscreen;
+                picture-in-picture;
+                screen-wake-lock;
+              "
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="sessions__video_tablet">
+            <iframe
+              src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239655&hash=e6560f345722155d&hd=3"
+              width="570"
+              height="400"
+              allow="
+                autoplay;
+                encrypted-media;
+                fullscreen;
+                picture-in-picture;
+                screen-wake-lock;
+              "
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="sessions__video_mobile">
+            <iframe
+              src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239655&hash=e6560f345722155d&hd=3"
+              width="370"
+              height="220"
+              allow="
+                autoplay;
+                encrypted-media;
+                fullscreen;
+                picture-in-picture;
+                screen-wake-lock;
+              "
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="sessions__video_mini">
+            <iframe
+              src="https://vkvideo.ru/video_ext.php?oid=-99035493&id=456239655&hash=e6560f345722155d&hd=3"
+              width="300"
+              height="300"
               allow="
                 autoplay;
                 encrypted-media;
@@ -1015,7 +1159,6 @@
               </li>
             </ul>
 
-            <!-- реальный select — именно он попадёт в данные формы -->
             {{registerForm.format}} {% if registerForm.format.errors %}
             <div class="field-error">
               {% for error in registerForm.format.errors %}
@@ -1023,27 +1166,11 @@
               {% endfor %}
             </div>
             {% endif %}
-            <!-- <select
-              name="format"
-              class="format-select__native"
-              aria-hidden="true"
-              tabindex="-1"
-            >
-              <option value="" selected disabled hidden>Выберите формат</option>
-              <option value="off">Очно</option>
-              <option value="onn">Заочно</option>
-            </select> -->
           </div>
           <div class="register__input-wrapper">
             <label class="register__label" for="message"
               >Доп. информация для организаторов</label
             >
-            <!-- <textarea
-              class="register__input"
-              id="message"
-              type="text"
-              rows="5"
-            ></textarea> -->
             {{ registerForm.message }} {% if registerForm.message.errors %}
             <div class="field-error">
               {% for error in registerForm.message.errors %}
@@ -1053,7 +1180,6 @@
             {% endif %}
           </div>
           <label class="register__checkbox-wrapper">
-            <!-- <input class="register__checkbox-input" id="register__input-policy" type="checkbox"> -->
             {{registerForm.policy}}
             <div class="register__checkbox-box"></div>
             <label for="register__input-policy" class="register__checkbox">

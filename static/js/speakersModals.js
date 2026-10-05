@@ -20,12 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
             {bold}[● Автор книг, учебников, статей по медиации и другим примирительным процедурам]
             {bold}[● Автор федерального курса «Семейная медиация» на базе «Академии Знание» от Российского общества «Знание»]
         `,
-    widthMultiplier: 1.8,
     titleSizeMultiplier: 0.6,
     titleColor: "rgb(47, 80, 31)",
     titleMargin: "0",
     backgroundColor: "#fff",
     css: `
+        .popup-content{
+          max-width: 90%;
+          max-height: 90%;
+        }
         .popup-body p{
             margin-top: 1%;
             margin-bottom: 1%;

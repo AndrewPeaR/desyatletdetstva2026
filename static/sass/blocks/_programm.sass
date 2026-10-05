@@ -15,10 +15,14 @@
         align-items: center
         text-transform: uppercase
         @include font-styles(48px, 400, $green)
+        @include mediaMobile
+            font-size: 32px
     &__wrapper
         background-color: $green
         padding-top: 18px
         padding-bottom: 43px
+        @include mediaLaptop
+            padding: 18px 20px 43px
     &__subtitle
         display: flex
         justify-content: center
@@ -26,9 +30,19 @@
         text-transform: uppercase
         margin-bottom: 18px
         @include font-styles(32px, 400, $white)
+        @include mediaMobile
+            font-size: 24px
     &__items
         display: flex
         justify-content: space-between
+        @media screen and (max-width: 860px)
+            display: grid
+            grid-template-columns: 1fr 1fr
+            row-gap: 25px
+            .programm__speaker
+                justify-self: center
+        @include mediaMobile
+            grid-template-columns: 1fr
     &__speaker
         max-width: 185px
         border-radius: 8px

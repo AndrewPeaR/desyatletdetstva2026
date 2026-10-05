@@ -35,6 +35,15 @@ $format-select-radius: 16px
         &:focus-visible
             box-shadow: 0 0 0 4px rgba($lightgreen-border, .15)
             outline: none
+        @include mediaLargeMobile
+            height: 50px
+            padding: 18px 22px
+            padding-right: 10px
+            font-size: 14px
+        @include mediaMobile
+            font-size: 12px
+        @media screen and (max-width: 360px)
+            font-size: 10px
 
     &__label
         position: absolute
@@ -48,6 +57,12 @@ $format-select-radius: 16px
         letter-spacing: 0.5px
         text-transform: uppercase
         @include font-styles(20px, 400, $green)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaLargeMobile
+            font-size: 14px
+            left: 0
+            top: -20px
 
     &__arrow
         flex-shrink: 0
@@ -74,6 +89,7 @@ $format-select-radius: 16px
         pointer-events: none
         transition: opacity .18s ease, transform .18s ease
         z-index: 20
+        
 
     &__option
         padding: 22px 34px
@@ -85,6 +101,8 @@ $format-select-radius: 16px
         cursor: pointer
         border-bottom: 3px solid $lightgreen-border
         transition: background-color .15s ease
+        @include mediaLargeMobile
+            padding: 18px 22px
 
         &:last-child
             border-bottom: none

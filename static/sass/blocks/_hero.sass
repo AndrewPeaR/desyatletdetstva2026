@@ -1,16 +1,34 @@
 .hero
     padding-top: 100px
     padding-bottom: 400px
+    width: 100%
+    overflow: hidden
+    @include mediaLargeTablet
+        padding-bottom: 110px
+    @include mediaTablet
+        padding-top: 40px
+    @include mediaLargeMobile
+        padding-bottom: 40px
     // padding-bottom: 270px
     // overflow: hidden
     .wrapper
         position: relative
+        @include mediaLaptop
+            padding: 0 15px
     &__backgrounds
         position: absolute
         z-index: 1
         top: -80px
         right: -190px
-        // right: -200px
+        @include mediaLargeTablet
+            top: 70px
+            left: 0
+            bottom: 0
+            right: -40px
+            opacity: 0.5
+        @include mediaMobile
+            right: 0
+        
     &__header
         display: flex
         align-items: center
@@ -18,6 +36,14 @@
         z-index: 2
         gap: 60px
         margin-bottom: 45px
+        @include mediaLargeTablet
+            gap: 30px
+        @include mediaLargeMobile
+            justify-content: space-between
+            gap: unset
+        @include mediaMobile
+            img
+                max-width: 50px
     &__info
         margin-bottom: 55px
         position: relative
@@ -26,9 +52,21 @@
         margin-bottom: 10px
         text-transform: uppercase
         @include font-styles(20px, 400, $orange)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaMobile
+            font-size: 14px
     &__title
         text-transform: uppercase
         @include font-styles(48px, 400, $light-green)
+        @include mediaTablet
+            font-size: 32px
+        @include mediaLargeMobile
+            font-size: 30px
+        @include mediaMobile
+            font-size: 24px
+        @include mediaSmallMobile
+            font-size: 20px
     &__controls
         display: flex
         flex-direction: column
@@ -40,9 +78,17 @@
         margin-bottom: 5px
         text-transform: uppercase
         @include font-styles(40px, 400, $orange)
+        @include mediaTablet
+            font-size: 28px
+        @include mediaMobile
+            font-size: 20px
     &__city
         text-transform: uppercase
         @include font-styles(20px, 400, $green)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaMobile
+            font-size: 14px
     &__programm
         display: inline-flex
         justify-content: center
@@ -54,3 +100,8 @@
         @include transition
         &:hover
             filter: brightness(115%)
+        @include mediaTablet
+            padding: 24px
+        @include mediaMobile
+            padding: 18px
+            font-size: 14px

@@ -1,5 +1,9 @@
 .schedule
     margin-bottom: 80px
+    @include mediaLargeTablet
+        overflow-x: scroll
+        &__wrapper
+            width: 900px
     &__header
         padding: 14px 0
         background-color: $salat

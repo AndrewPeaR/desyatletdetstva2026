@@ -50,6 +50,14 @@
     p:nth-child(1),p:nth-child(2)
         display: flex
         justify-content: center
+    p:nth-child(1)
+        @include mediaMobile
+            margin-top: 20px
+    p:nth-child(2)
+        @include mediaMobile
+            padding: 0 30px
+            img
+                max-width: 100%
     p, span
         font-family: $font-accent
         font-size: 16px

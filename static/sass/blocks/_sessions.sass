@@ -2,11 +2,20 @@
     padding: 78px 0 330px 0
     background-color: $background-brown
     background-image: url('../img/session-bg.svg')
-    background-position: center top
+    background-position: calc( 50% + 60px ) top
+    background-size: contain
+    background-repeat: repeat-y
+    @include mediaLargeTablet
+        padding-top: 50px
+        padding-bottom: 230px
+    @include mediaLargeMobile
+        padding-bottom: 130px
     .wrapper
         display: flex
         flex-direction: column
         gap: 96px
+        @include mediaLargeTablet
+            padding: 0 15px
     &__item
         display: flex
         flex-direction: column
@@ -15,11 +24,36 @@
         text-align: center
         margin-bottom: 24px
         @include font-styles(48px, 400, $orange)
+        @include mediaLargeTablet
+            font-size: 34px
+        @include mediaMobile
+            font-size: 24px
     &__text
         font-family: $font-accent
         text-align: center
         margin-bottom: 48px
         max-width: 850px
         @include font-styles(18px, 700, #000)
+        @include mediaMobile
+            font-size: 14px
     &__video
-        width: 890px
+        width: 100%
+        max-width: 890px
+        @include mediaLargeTablet
+            display: none
+        &_tablet
+            display: none
+            @include mediaLargeTablet
+                display: block
+            @include mediaSmallTablet
+                display: none
+        &_mobile
+            display: none
+            @include mediaSmallTablet
+                display: block
+            @include mediaSmallMobile
+                display: none
+        &_mini
+            display: none
+            @include mediaSmallMobile
+                display: block

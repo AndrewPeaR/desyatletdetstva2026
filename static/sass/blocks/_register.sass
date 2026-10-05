@@ -5,6 +5,14 @@
     background-image: url('../img/register_background.svg')
     // background-position: center calc( 0% - 100px )
     background-position: center 0
+    overflow-x: hidden
+    @include mediaLargeMobile
+        padding-top: 60px
+    .wrapper
+        @include mediaLargeTablet
+            padding: 0 20px
+        @include mediaLargeMobile
+            padding: 0 10px
     &__title
         display: flex
         justify-content: center
@@ -17,6 +25,13 @@
             content: url('../img/title-left.svg')
         &::after
             content: url('../img/title-right.svg')
+        @include mediaTablet
+            font-size: 32px
+        @include mediaLargeMobile
+            font-size: 24px
+            gap: 0
+            &::before, &::after
+                transform: scale(0.7)
     
     &__form
         display: flex
@@ -68,6 +83,10 @@
         @include font-styles(20px, 400, $green)
         &:hover
             filter: brightness(110%)
+        @include mediaLargeMobile
+            margin-top: -50px
+            font-size: 16px
+            padding: 18px 24px
     &__label
         position: absolute
         top: 0
@@ -80,6 +99,12 @@
         letter-spacing: 0.5px
         text-transform: uppercase
         @include font-styles(20px, 400, $green)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaLargeMobile
+            font-size: 14px
+            left: 0
+            top: -20px
 
     &__input
         background-color: $white
@@ -97,8 +122,12 @@
         &:focus-visible
             box-shadow: 0 0 0 4px rgba($lightgreen-border, .15)
             outline: none
+        @include mediaLargeMobile
+            font-size: 16px
     &__input_height
         height: 80px
+        @include mediaLargeMobile
+            height: 50px
     &__policy
         color: $purple
         @include transition
@@ -110,4 +139,3 @@
         span
             color: $red
             font-size: 14px
-    .input-error

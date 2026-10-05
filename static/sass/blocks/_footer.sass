@@ -8,6 +8,11 @@
         background-repeat: repeat-x
         @include mediaLaptop
             padding: 24px
+        @include mediaLargeTablet
+            background-size: 105% auto
+        @include mediaLargeMobile
+            background-size: 110% 70px
+
     &__pattern
         width: 100%
     &__wrapper
@@ -17,6 +22,7 @@
         @include mediaLargeMobile
             flex-direction: column-reverse
             gap: 42px
+            padding-top: 20px
     &__expirience
         display: flex
         flex-direction: column
@@ -74,6 +80,8 @@
         box-sizing: border-box        
         @include transition
         @include font-styles(20px, 400, $white)
+        @include mediaLargeMobile
+            font-size: 16px
     &__input_height
         height: 80px
     &__label
@@ -88,6 +96,8 @@
         letter-spacing: 0.5px
         text-transform: uppercase
         @include font-styles(20px, 400, $white)
+        @include mediaLargeMobile
+            font-size: 16px
 
 
     &__checkbox-wrapper
@@ -138,6 +148,9 @@
         @include font-styles(20px, 400, $green)
         &:hover
             filter: brightness(120%)
+        @include mediaLargeTablet
+            font-size: 16px
+            padding: 18px 22px
     .field-error
         margin-top: 7px
         color: $red
