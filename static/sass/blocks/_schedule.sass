@@ -1,13 +1,57 @@
 .schedule
     margin-bottom: 80px
     @include mediaLargeTablet
-        overflow-x: scroll
         &__wrapper
-            width: 900px
+            max-width: 900px
+            width: 100%
+            @include mediaLargeMobile
+                display: none
+    &__mobile
+        display: none
+        background-color: $gray
+        @include mediaLargeMobile
+            display: block
     &__header
         padding: 14px 0
         background-color: $salat
         @include schedule-grid
+        @include mediaTablet
+            grid-template-columns: 120px 1fr 200px
+        @include mediaSmallTablet
+            grid-template-columns: 108px 1fr 173px
+    &__mobile-header
+        background-color: $schedule
+        padding: 12px 24px
+        p
+            text-align: center
+            @include font-styles(16px, 700, black)
+    &__cards
+        padding: 12px
+        display: flex
+        flex-direction: column
+        gap: 12px
+    &__card
+        background-color: $white
+        padding: 16px
+        border-radius: 16px
+        .schedule__time
+            display: flex
+            align-items: center
+            gap: 12px
+            margin-bottom: 12px
+            @include font-styles(16px, 700, black)
+        .schedule__name
+            margin-bottom: 12px
+            font-family: $font-accent
+            @include font-styles(18px, 700, black)
+        .schedule__geopos
+            display: flex
+            gap: 12px
+            align-items: center
+            padding-top: 12px
+            border-top: 1px dashed #666666
+            font-family: $font-accent
+            @include font-styles(16px, 700, #666666)
     &__col-label
         font-family: $font-accent
         display: flex
@@ -27,6 +71,13 @@
         .schedule__cell:last-child
             justify-self: start
             padding-left: 30px
+        @include mediaTablet
+            grid-template-columns: 120px 1fr 200px 
+        @include mediaSmallTablet
+            grid-template-columns: 108px 1fr 173px 
+            .schedule__cell:last-child
+                padding-left: 15px
+
 
     &__cell
         padding: 0 5px

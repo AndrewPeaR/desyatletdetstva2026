@@ -407,15 +407,70 @@ html {
 .schedule {
   margin-bottom: 80px; }
   @media screen and (max-width: 992px) {
-    .schedule {
-      overflow-x: scroll; }
-      .schedule__wrapper {
-        width: 900px; } }
+    .schedule__wrapper {
+      max-width: 900px;
+      width: 100%; } }
+  @media screen and (max-width: 992px) and (max-width: 576px) {
+    .schedule__wrapper {
+      display: none; } }
+  .schedule__mobile {
+    display: none;
+    background-color: #FAFAFA; }
+    @media screen and (max-width: 576px) {
+      .schedule__mobile {
+        display: block; } }
   .schedule__header {
     padding: 14px 0;
     background-color: #D5E7C6;
     display: grid;
     grid-template-columns: 200px 1fr 300px; }
+    @media screen and (max-width: 768px) {
+      .schedule__header {
+        grid-template-columns: 120px 1fr 200px; } }
+    @media screen and (max-width: 640px) {
+      .schedule__header {
+        grid-template-columns: 108px 1fr 173px; } }
+  .schedule__mobile-header {
+    background-color: #F7EAD4;
+    padding: 12px 24px; }
+    .schedule__mobile-header p {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: black; }
+  .schedule__cards {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; }
+  .schedule__card {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 16px; }
+    .schedule__card .schedule__time {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      color: black; }
+    .schedule__card .schedule__name {
+      margin-bottom: 12px;
+      font-family: "Arodora Pro", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: black; }
+    .schedule__card .schedule__geopos {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px dashed #666666;
+      font-family: "Arodora Pro", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #666666; }
   .schedule__col-label {
     font-family: "Arodora Pro", sans-serif;
     display: flex;
@@ -436,6 +491,14 @@ html {
     .schedule__row .schedule__cell:last-child {
       justify-self: start;
       padding-left: 30px; }
+    @media screen and (max-width: 768px) {
+      .schedule__row {
+        grid-template-columns: 120px 1fr 200px; } }
+    @media screen and (max-width: 640px) {
+      .schedule__row {
+        grid-template-columns: 108px 1fr 173px; }
+        .schedule__row .schedule__cell:last-child {
+          padding-left: 15px; } }
   .schedule__cell {
     padding: 0 5px;
     justify-self: center;
