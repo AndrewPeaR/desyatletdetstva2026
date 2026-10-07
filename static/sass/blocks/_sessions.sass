@@ -6,6 +6,8 @@
     background-size: contain
     background-repeat: repeat-y
     @include mediaLargeTablet
+        background-image: url('../img/session-bg-mobile.svg')
+        background-position: center top
         padding-top: 50px
         padding-bottom: 230px
     @include mediaLargeMobile
@@ -16,6 +18,8 @@
         gap: 96px
         @include mediaLargeTablet
             padding: 0 15px
+        @include mediaMobile
+            gap: 60px
     &__item
         display: flex
         flex-direction: column

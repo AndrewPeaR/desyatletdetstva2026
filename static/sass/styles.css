@@ -130,7 +130,7 @@ html {
     @media screen and (max-width: 480px) {
       .hero__backgrounds {
         top: 90px;
-        right: 0; } }
+        right: -200px; } }
   .hero__header {
     display: flex;
     align-items: center;
@@ -794,6 +794,8 @@ html {
   background-repeat: repeat-y; }
   @media screen and (max-width: 992px) {
     .sessions {
+      background-image: url("../img/session-bg-mobile.svg");
+      background-position: center top;
       padding-top: 50px;
       padding-bottom: 230px; } }
   @media screen and (max-width: 576px) {
@@ -806,6 +808,9 @@ html {
     @media screen and (max-width: 992px) {
       .sessions .wrapper {
         padding: 0 15px; } }
+    @media screen and (max-width: 480px) {
+      .sessions .wrapper {
+        gap: 60px; } }
   .sessions__item {
     display: flex;
     flex-direction: column;
@@ -987,7 +992,8 @@ html {
   background-repeat: repeat-x; }
   @media screen and (max-width: 1260px) {
     .footer__background {
-      padding: 24px; } }
+      padding: 24px;
+      padding-bottom: 110px; } }
   @media screen and (max-width: 992px) {
     .footer__background {
       background-size: 105% auto; } }
