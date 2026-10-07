@@ -122,13 +122,14 @@ html {
     right: -190px; }
     @media screen and (max-width: 992px) {
       .hero__backgrounds {
-        top: 70px;
+        top: 135px;
         left: 0;
         bottom: 0;
         right: -40px;
         opacity: 0.5; } }
     @media screen and (max-width: 480px) {
       .hero__backgrounds {
+        top: 90px;
         right: 0; } }
   .hero__header {
     display: flex;
