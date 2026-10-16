@@ -60,6 +60,7 @@ class RegisterForm(forms.Form, forms.ModelForm):
         "yrai": "Урай",
         "khanty": "Ханты-Мансийск",
         "ugorsk": "Югорск",
+        "drugoe": "Другое"
     }
 
     placeOne_choises = {
@@ -72,8 +73,8 @@ class RegisterForm(forms.Form, forms.ModelForm):
     fio = forms.CharField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "fio"}), label='', required=True)
     category = forms.ChoiceField(choices=category_choices, widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "id": 'category', "required": "required"}), label='', required=True)
     city = forms.ChoiceField(choices=cities_choises ,widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "id": 'city', "required": "required"}), label='', required=True)
-    phone = forms.CharField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "phone"}), label='', required=True)
-    email = forms.EmailField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "email"}), label='', required=True)
+    phone = forms.CharField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "phone"}), label='', required=False)
+    email = forms.EmailField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "email"}), label='', required=False)
     place = forms.ChoiceField(choices=placeOne_choises ,widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "id": 'place', "required": "required"}), label='', required=True)
     format = forms.ChoiceField(choices=format_choices, widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "required": "required"}), label='', required=True)
     message = forms.CharField(widget=forms.Textarea(attrs={"class":"register__input", 'rows': 5, "id": "message"}), label='', required=False)

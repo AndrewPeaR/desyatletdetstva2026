@@ -50,6 +50,7 @@ class Register (models.Model):
         "yrai": "Урай",
         "khanty": "Ханты-Мансийск",
         "ugorsk": "Югорск",
+        "drugoe": "Другое"
     }
 
     PLACE_ONE = {
@@ -61,8 +62,8 @@ class Register (models.Model):
     fio = models.CharField(max_length=250, verbose_name="ФИО")
     category = models.CharField(max_length=15, choices=CATEGORIES, verbose_name='Категория участника')
     city = models.CharField(max_length=15, choices=CITIES, verbose_name='Муниципальное образование')
-    phone = models.CharField(max_length=30, verbose_name='Номер телефона')
-    email = models.CharField(max_length=50, verbose_name='Email')
+    phone = models.CharField(max_length=30, verbose_name='Номер телефона', null=True, blank=True)
+    email = models.CharField(max_length=50, verbose_name='Email', null=True, blank=True)
     place = models.CharField(max_length=20, choices=PLACE_ONE, verbose_name='Площадка, которую хотите посетить')
     format = models.CharField(max_length=3, choices=CHOISES, verbose_name='Формат участия')
     message = models.TextField(verbose_name='Доп. информация для организаторов', null=True, blank=True)
