@@ -73,6 +73,7 @@ class RegisterForm(forms.Form, forms.ModelForm):
     fio = forms.CharField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "fio"}), label='', required=True)
     category = forms.ChoiceField(choices=category_choices, widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "id": 'category', "required": "required"}), label='', required=True)
     city = forms.ChoiceField(choices=cities_choises ,widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "id": 'city', "required": "required"}), label='', required=True)
+    city_other = forms.CharField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "city_other"}), label='', required=False)
     phone = forms.CharField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "phone"}), label='', required=False)
     email = forms.EmailField(widget=forms.TextInput(attrs={"class":"register__input register__input_height", "id": "email"}), label='', required=False)
     place = forms.ChoiceField(choices=placeOne_choises ,widget=forms.Select(attrs={"class": 'format-select__native', 'tabindex': '-1', 'aria-hidden': 'true', "id": 'place', "required": "required"}), label='', required=True)
@@ -82,7 +83,7 @@ class RegisterForm(forms.Form, forms.ModelForm):
 
     class Meta:
         model = Register
-        fields = ('fio', 'category', 'phone', 'email', 'city', 'place', 'format', 'message', 'policy')
+        fields = ('fio', 'category', 'phone', 'email', 'city', 'city_other', 'place', 'format', 'message', 'policy')
 
 
 class FeedbackForm(forms.Form, forms.ModelForm):

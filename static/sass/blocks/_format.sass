@@ -121,6 +121,9 @@ $format-select-radius: 16px
         clip: rect(0, 0, 0, 0)
         white-space: nowrap
         border: 0
+        &:invalid:focus ~ .format-select__trigger
+            border-color: $red
+
 
 .format-select[data-open="true"]
     .format-select__arrow

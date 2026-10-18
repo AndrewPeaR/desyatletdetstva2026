@@ -124,6 +124,10 @@
             outline: none
         @include mediaLargeMobile
             font-size: 16px
+        &:invalid:focus
+            border-color: $red
+        
+
     &__input_height
         height: 80px
         @include mediaLargeMobile

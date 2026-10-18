@@ -8,7 +8,7 @@ from .resources import RegisterResource
 @admin.register(Register)
 class RegisterAdmin(ImportExportModelAdmin):
     resource_classes = [RegisterResource]
-    list_display = ('id', 'fio', 'phone', 'email', 'category', 'city', 'place', 'format', 'message', 'policy')
+    list_display = ('id', 'fio', 'phone', 'email', 'category', 'city', 'city_other', 'place', 'format', 'message', 'policy')
 
 @admin.register(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):

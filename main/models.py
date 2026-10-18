@@ -62,6 +62,7 @@ class Register (models.Model):
     fio = models.CharField(max_length=250, verbose_name="ФИО")
     category = models.CharField(max_length=15, choices=CATEGORIES, verbose_name='Категория участника')
     city = models.CharField(max_length=15, choices=CITIES, verbose_name='Муниципальное образование')
+    city_other = models.CharField(max_length=80, verbose_name='Другой город', null=True, blank=True)
     phone = models.CharField(max_length=30, verbose_name='Номер телефона', null=True, blank=True)
     email = models.CharField(max_length=50, verbose_name='Email', null=True, blank=True)
     place = models.CharField(max_length=20, choices=PLACE_ONE, verbose_name='Площадка, которую хотите посетить')

@@ -628,6 +628,7 @@
             {% endif %}
           </div>
           <div class="format-select" data-open="false">
+            {{registerForm.category}}
             <button
               type="button"
               class="format-select__trigger"
@@ -811,7 +812,7 @@
                 Другое
               </li>
             </ul>
-            {{registerForm.category}} {% if registerForm.category.errors %}
+            {% if registerForm.category.errors %}
             <div class="field-error">
               {% for error in registerForm.category.errors %}
               <span>{{ error }}</span>
@@ -819,7 +820,9 @@
             </div>
             {% endif %}
           </div>
-          <div class="format-select" data-open="false">
+
+          <div class="format-select" data-open="false" id="format_city_other">
+            {{registerForm.city}}
             <button
               type="button"
               class="format-select__trigger"
@@ -1064,7 +1067,7 @@
                 Другое
               </li>
             </ul>
-            {{registerForm.city}} {% if registerForm.city.errors %}
+            {% if registerForm.city.errors %}
             <div class="field-error">
               {% for error in registerForm.city.errors %}
               <span>{{ error }}</span>
@@ -1073,7 +1076,21 @@
             {% endif %}
           </div>
 
-          <div class="format-select" data-open="false">
+          <div id="input_city_other" class="register__input-wrapper" style="display: none;">
+            <label for="city_other" class="register__label">Укажите город вручную</label>
+            {{ registerForm.city_other }}
+            {% if registerForm.city_other.errors %}
+              <div class="field-error">
+                {% for error in registerForm.city_other.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+
+
+          <div id="place_format_input" class="format-select" data-open="false">
+            {{registerForm.place}}
             <button
               type="button"
               class="format-select__trigger"
@@ -1128,8 +1145,23 @@
               >
                 Лаборатория «Социальная безопасность семьи и детства»
               </li>
+              <li
+                class="format-select__option"
+                role="option"
+                id="opt-inklusion"
+                data-value="inklusion"
+                aria-selected="false"
+              >
+                Лаборатория «Развитие родительских компетенций»
+              </li>
             </ul>
-            {{registerForm.place}}
+            {% if registerForm.place.errors %}
+            <div class="field-error">
+              {% for error in registerForm.place.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
 
           <div class="register__input-wrapper">
@@ -1152,7 +1184,9 @@
             </div>
             {% endif %}
           </div>
-          <div class="format-select" data-open="false">
+
+          <div class="format-select" id="format_format_input" data-open="false">
+            {{registerForm.format}}
             <button
               type="button"
               class="format-select__trigger"
@@ -1207,7 +1241,7 @@
               </li>
             </ul>
 
-            {{registerForm.format}} {% if registerForm.format.errors %}
+            {% if registerForm.format.errors %}
             <div class="field-error">
               {% for error in registerForm.format.errors %}
               <span>{{ error }}</span>
@@ -1396,6 +1430,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.4.5/popup.min.js"></script>
     <script src="{% static 'js/speakersModals.js' %}"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+    <script src="{% static 'js/blockFormatOption.js' %}"></script>
 
     <script src="{% static 'js/captcha.js' %}"></script>
     <script src="{% static 'js/fslightbox.js' %}"></script>
