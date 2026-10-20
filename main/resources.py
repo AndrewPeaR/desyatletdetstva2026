@@ -3,6 +3,7 @@ from .models import Register
 
 class RegisterResource(resources.ModelResource):
     # Если нужно переименовать колонки в Excel/CSV — делай это через column_name
+    id = fields.Field(attribute='id', column_name='ID')
     fio = fields.Field(attribute='fio', column_name='ФИО')
     category = fields.Field(attribute='city', column_name='Категория')
     city = fields.Field(attribute='city', column_name='Город')
@@ -10,7 +11,7 @@ class RegisterResource(resources.ModelResource):
     phone = fields.Field(attribute='phone', column_name='Телефон')
     email = fields.Field(attribute='email', column_name='Электронная почта')
     place = fields.Field(attribute='place', column_name='Место')
-    format = fields.Field(attribute='format', column_name='Формат участия')
+    participation = fields.Field(attribute='format', column_name='Формат участия')
     message = fields.Field(attribute='message', column_name='Сообщение')
     policy = fields.Field(attribute='policy', column_name='Согласие с политикой')
 
@@ -23,7 +24,7 @@ class RegisterResource(resources.ModelResource):
     def dehydrate_city(self, obj):
         return obj.get_city_display()
 
-    def dehydrate_format(self, obj):
+    def dehydrate_participation(self, obj):
         return obj.get_format_display()
 
     def dehydrate_policy(self, obj):
@@ -32,6 +33,6 @@ class RegisterResource(resources.ModelResource):
     class Meta:
         model = Register
         # Порядок колонок при экспорте
-        export_order = ('id', 'fio', 'category', 'city', 'city_other', 'phone', 'email', 'place', 'format', 'message', 'policy')
+        export_order = ('id', 'fio', 'category', 'city', 'city_other', 'phone', 'email', 'place', 'participation', 'message', 'policy')
         # Можно явно указать, какие поля выгружать. Если не указать — выгрузятся все поля модели
-        fields = ('id', 'fio', 'category', 'city', 'city_other', 'phone', 'email', 'place', 'format', 'message', 'policy')
+        fields = ('id', 'fio', 'category', 'city', 'city_other', 'phone', 'email', 'place', 'participation', 'message', 'policy')
