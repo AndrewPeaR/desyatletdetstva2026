@@ -24,7 +24,7 @@ class RegisterResource(resources.ModelResource):
         return obj.get_city_display()
 
     def dehydrate_format(self, obj):
-        return obj.get_place_display()
+        return obj.get_format_display()
 
     def dehydrate_policy(self, obj):
         return 'Да' if obj.policy else 'Нет'
